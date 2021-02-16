@@ -32,6 +32,7 @@
       <?php
         if (isset($_SESSION["brukerID"])) {
           echo "  <li><a href='../PHP/prfoil.php'>Min profil</a></li>";
+	  echo "  <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
         }
         else {
           echo "<li><a href='../PHP/login.php'>Logg inn</a></li>";

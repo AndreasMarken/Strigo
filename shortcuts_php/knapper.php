@@ -1,17 +1,3 @@
-<?php
- session_start();
- ?>
-
-<!doctype html>
-<html lang="nb">
-  <head>
-    <title>Strigo</title>
-
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/index.css">
-
-  </head>
-
   <body>
 
           <div class="body">
@@ -42,10 +28,19 @@
     </ul>
   </div>
 
-
-
-
 <style>
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #3F7075;
+  margin: -10px;
+  margin-bottom: 10px;
+}
+
+body {
+  background-color: #CFF3F7
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -74,9 +69,7 @@ ul a:hover {
 }
 
 .knapper{
-  border-top: 3px solid #000000;
   display: flex;
   justify-content: center;
 }
-
 </style>

@@ -45,7 +45,7 @@ function pwdMatch($passord, $pwdrepeat) {
 }
 
 function uidExist($kobling, $brukernavn, $email) {
-  $sql = "SELECT * FROM elev_login WHERE brukerID = ? OR email = ?;";
+  $sql = "SELECT * FROM elev_login WHERE brukernavn = ? OR email = ?;";
   $stmt = mysqli_stmt_init($kobling);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../PHP/registrer.php?error=stmtfailed");

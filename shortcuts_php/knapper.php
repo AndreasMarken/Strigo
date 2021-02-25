@@ -11,16 +11,19 @@
 <div class="knapper">
 
   <ul>
-	    <li><a href="../php/hovedside.php">Praktisk info</a></li>
-	    <li><a href="../php/bildegalleri.php">For skolene</a></li>
-	    <li><a href="../php/linkside.php">For elever</a></li>
-	    <li><a href="../php/gjestebok.php"><img src="../bilder/2.png" height="20px" width="100px"alt="handlevogn"></a></li>
+
+
+
       <?php
         if (isset($_SESSION["brukerID"])) {
           echo "  <li><a href='../PHP/prfoil.php'>Min profil</a></li>";
           echo "  <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
         }
         else {
+          echo "<li><a href='../php/hovedside.php'>Praktisk info</a></li>";
+          echo " <li><a href='../php/bildegalleri.php'>For skolene</a></li>";
+          echo "<li><a href='../php/linkside.php'>For elever</a></li>";
+          echo "<li><a href='../php/gjestebok.php'><img src='../bilder/2.png' height='20px'></a></li>";
           echo "<li><a href='../PHP/login.php'>Logg inn</a></li>";
         }
        ?>

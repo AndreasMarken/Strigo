@@ -55,6 +55,7 @@ h3{
   flex-direction: row;
 }
 
+
 .andre_rad {
   display: flex;
   flex-direction: row;
@@ -72,50 +73,4 @@ h3{
 
 .liten_boks_medtekst img {
   margin-top: 5px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  background-color: #3F7075;
-  margin: -10px;
-  margin-bottom: 10px;
-}
-
-body {
-  background-color: #CFF3F7
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-
-}
-
-ul li {
-  display: inline;
-
-}
-
-ul a {
-  width: 240px;
-  padding: 5px;
-  border-radius: 3px;
-  margin: 2px;
-  font-weight: bold;
-  font-size: 25px;
-  text-decoration: none;
-  background-color: #69b9c2;
-  color: white;
-}
-
-ul a:hover {
-  background-color: #000010;
-}
-
-.knapper{
-  display: flex;
-  justify-content: flex-end;
-  margin-left: 800px;
-  align-items:center;
 }

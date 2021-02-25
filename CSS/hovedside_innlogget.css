@@ -1,0 +1,77 @@
+.oversiktsmeny {
+  display: flex;
+  flex-direction: row;
+  background-color: #3F7075;
+  margin-left: 210px;
+  justify-content: space-around;
+  align-items: center;
+  width: 790px;
+}
+
+.minprofil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.fullførtkapitler {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.fullførtoppgaver {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+h3{
+  color: white;
+}
+
+.minprofil h3{
+  margin-top: 5px;
+}
+
+.små_bokser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.øverste_rad {
+  display: flex;
+  flex-direction: row;
+}
+
+.liten_boks {
+  background-color: #69b9c2;
+  margin: 10px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.andre_rad {
+  display: flex;
+  flex-direction: row;
+}
+
+.liten_boks_medtekst {
+  display: flex;
+  flex-direction: column;
+  background-color: #69b9c2;
+  margin: 10px;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
+.liten_boks_medtekst img {
+  margin-top: 5px;
+}

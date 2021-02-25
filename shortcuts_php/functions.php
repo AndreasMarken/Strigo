@@ -116,7 +116,7 @@ function loginUser($kobling, $brukernavn, $pwd){
     session_start();
     $_SESSION["brukerID"] = $uidExists["brukerID"];
     $_SESSION["brukernavn"] = $uidExists["brukernavn"];
-    header("location: ../PHP/index.php");
+    header("location: ../PHP/hovedside_innlogget.php");
     exit();
   }
 }

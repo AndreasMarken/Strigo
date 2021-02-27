@@ -26,7 +26,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
     echo "<img src='../bilder/profile.png' width='60px'>";
 
     $id = $_SESSION["brukerID"];
-    $sql = "SELECT * FROM elev_login WHERE brukerID = $id";
+    $sql = "SELECT * FROM student WHERE brukerID = $id";
     $resultat = $kobling->query($sql);
 
 	if (!$resultat) {

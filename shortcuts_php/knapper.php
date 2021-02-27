@@ -9,7 +9,7 @@
                 if (isset($_SESSION["brukerID"])) {
                   echo "<div class='knapper_innlogget'>";
                   echo "<ul>";
-                  echo "  <li><a href='../PHP/prfoil.php'>Min profil</a></li>";
+                  echo "  <li><a href='../PHP/min_profil.php'>Min profil</a></li>";
                   echo "  <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
                   echo "  </ul>";
                 }

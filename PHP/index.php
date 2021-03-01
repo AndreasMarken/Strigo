@@ -9,7 +9,7 @@
 
   </head>
 
-<?php require_once '../shortcuts_php/knapper.php' ; ?>
+<?php require_once '../shortcuts_php/header.php' ; ?>
 
   <img src="../bilder/bilde1.png">
 

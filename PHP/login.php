@@ -10,7 +10,7 @@
 
   </head>
 
-<?php require_once '../shortcuts_php/knapper.php' ; ?>
+<?php require_once '../shortcuts_php/header.php' ; ?>
 
 
 

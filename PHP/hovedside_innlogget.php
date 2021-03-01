@@ -10,7 +10,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
   </head>
 
-  <?php require_once '../shortcuts_php/knapper.php'; ?>
+  <?php require_once '../shortcuts_php/header.php'; ?>
 
 <?php
   if (isset($_SESSION["brukerID"])) {

@@ -1,6 +1,6 @@
 
 <div class="header">
-    <img src="../bilder/strigologo.jfif" width="100px">
+    <img src="../bilder/strigo_logo.png" width="100px">
     <h1>Strigo</h1>
 
 <!--Header når logget inn-->
@@ -8,7 +8,7 @@
         if (isset($_SESSION["brukerID"])) {
             echo "<div class='knapper_innlogget'>";
             echo "  <ul>";
-            echo "    <li><a href='../PHP/prfoil.php'>Min profil</a></li>";
+            echo "    <li><a href='../PHP/min_profil.php'>Min profil</a></li>";
             echo "    <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
             echo "  </ul>";
             echo "</div>";

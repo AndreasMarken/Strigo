@@ -18,8 +18,26 @@ require_once '../shortcuts_php/kobling.php'; ?>
               echo "<img src='../bilder/Skjermbilde.PNG'>";
             echo "</div>";
           }
+// Lager variabler for brukerID sitt navn, brukernavn og email//
+          $id = $_SESSION["brukerID"];
+          $sql1 = "SELECT * from student WHERE brukerID = $id";
+          $resultat = $kobling->query($sql1);
 
-          ?>
+        if (!$resultat) {
+          die("Noe gikk galt med spørringen: " . $kobling->error);
+
+        }
+        while ($rad = $resultat->fetch_assoc()) {
+        $navn = $rad['navn'];
+        $brukernavn = $rad['brukernavn'];
+        $epost = $rad['email'];
+      }
+        ?>
+
+        <form class="bilde" action="upload.php" method="post" enctype="multipart/form-data">
+          <input type="file" name="file" value="Velg profilbilde">
+          <button type="submit" name="submit">Lagre profilbildet</button>
+        </form>
 
           <div class="mainContainer">
             <div class="upperContainer">
@@ -28,18 +46,18 @@ require_once '../shortcuts_php/kobling.php'; ?>
             </div>
 
             <div class="lowerContainer">
-                <form action="min_profil.php" method="post">
-                  <label for="navn">NAVN:</label>
-                  <input type="text" name="nanvn" placeholder="Ola Nordmann"></br>
-                  <label for="brukernavn">BRUKERNAVN:</label>
-                  <input type="text" name="brukernavn" value="olanor"></br>
-                  <label for="passord">PASSORD:</label>
-                  <input type="text" name="passord" value="....."></br>
-                  <label for="epost">EPOST:</label>
-                  <input type="text" name="epost" value="ola.nordmann@post.no"></br>
+              <form action="" method="POST">
+                <label for="navn">NAVN:</label>
+                <input type="text" name="navn" value="<?php echo $navn; ?>"></br>
 
-                  <input type="submit" name="lagre" value="LAGRE">
-                </form>
+                <label for="brukernavn">BRUKERNAVN:</label>
+                <input type="text" name="brukernavn" value="<?php echo $brukernavn; ?>"></br>
+
+                <label for="epost">EPOST:</label>
+                <input type="email" name="epost" value="<?php echo $epost; ?>"></br>
+
+                <input type="submit" name="lagre" value="LAGRE">
+              </form>
             </div>
           </div>
 
@@ -47,14 +65,18 @@ require_once '../shortcuts_php/kobling.php'; ?>
 </html>
 
 <?php if(isset($_POST['lagre'])){
-  $navn = $_POST['navn'];
-  $brukernavn = $_POST['brukernavn'];
-  $epost = $_POST['epost'];
-  $brukerId = $_SESSION['brukerID'];
+$new_navn = $_POST['navn'];
+$id = $_SESSION["brukerID"];
+$new_brukernavn = $_POST['brukernavn'];
+$new_epost = $_POST['epost'];
 
-  $query = "  UPDATE 'Student'
-              SET navn = '$navn', brukernavn = '$brukernavn', email = '$epost'
-              WHERE brukerID = '$brukerId'  ";
-  $query_run = mysqli_query($kobling, $query);
+$sql2 = ("UPDATE student
+          SET navn = '$new_navn', brukernavn = '$new_brukernavn', email = '$new_epost'
+          WHERE brukerID = '$id';");
+
+$result = $kobling->query($sql2);
+
+ header("location:min_profil.php");
+
 }
-  ?>
+?>

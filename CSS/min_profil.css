@@ -47,6 +47,11 @@ input[type=text]{
   width: 300px;
 }
 
+input[type=email]{
+  height: 40px;
+  width: 300px;
+}
+
 input[type=submit]{
   height: 30px;
   width: 70px;

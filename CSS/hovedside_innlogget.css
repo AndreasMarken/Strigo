@@ -4,8 +4,8 @@
   background-color: #3F7075;
   justify-content: space-around;
   align-items: center;
-  margin-left: 210px;
   width: 790px;
+  margin: 0 auto;
 }
 
 .minprofil {
@@ -48,6 +48,11 @@ h3{
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+}
+
+.små_bokser a {
+  text-decoration: none;
+  color: white;
 }
 
 .øverste_rad {

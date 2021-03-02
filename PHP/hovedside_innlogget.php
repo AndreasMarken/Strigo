@@ -17,11 +17,12 @@ require_once '../shortcuts_php/kobling.php'; ?>
     echo "<div class='dropdownmenu'>";
       echo "<img src='../bilder/Skjermbilde.PNG'>";
     echo "</div>";
-  }
+  }?>
 
-
+<div class=oversiktsmeny>
+  <?php
  if (isset($_SESSION["brukerID"])) {
-   echo "<div class='oversiktsmeny'>";
+   echo "";
    echo "<div class='minprofil'>";
     echo "<img src='../bilder/profile.png' width='60px'>";
 
@@ -73,8 +74,11 @@ require_once '../shortcuts_php/kobling.php'; ?>
    }
 
    echo "</div>";
-   echo "</div>";
+
 }
+?>
+</div>
+<?php
 if (isset($_SESSION["brukerID"])) {
   echo "<div class='små_bokser'>";
     echo "<div class='øverste_rad'>";

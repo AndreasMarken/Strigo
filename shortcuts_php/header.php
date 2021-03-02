@@ -46,13 +46,16 @@ body {
   background-color: #3F7075;
   margin: -10px;
   margin-bottom: 10px;
+  width: 102%;
+  height: 75px;
 }
 
 .knapper_innlogget{
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 800px;
-    align-items:center;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  width: 100%;
+  align-items:center;
 }
 
 .knapper_ikke_innlogget{
@@ -60,17 +63,6 @@ body {
   justify-content: center;
 }
 
-.knapper_ikke_innlogget ul a {
-  width: 240px;
-  padding: 5px;
-  border-radius: 3px;
-  margin: 2px;
-  font-weight: bold;
-  font-size: 25px;
-  text-decoration: none;
-  background-color: #69b9c2;
-  color: white;
-}
 
 ul {
   list-style-type: none;

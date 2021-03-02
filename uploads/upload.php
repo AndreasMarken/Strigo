@@ -1,7 +1,13 @@
+<!-- Dokument som håndterer alt med filopplastingen til
+profilbilde på min_profil.php-->
+
 <?php
+session_start();
+require_once '../shortcuts_php/kobling.php';
+$id = $_SESSION['brukerID'];
 
 if (isset($_POST['submit'])) {
-  $file = $_FILES['file'];
+  $file = $_FILES['profilbilde']; /*Setter opp array $file*/
 
   $fileName = $file['name'];
   $fileTmpName = $file['tmp_name'];
@@ -9,27 +15,31 @@ if (isset($_POST['submit'])) {
   $fileError = $file['error'];
   $fileType = $file['type'];
 
-  $fileExt = explode('.' , $fileName);
+  $fileExt = explode('.' , $fileName); /*Lager et array med filnavn og extention ved å splitte stringen $fileName ved punktum*/
   $fileActualExt = strtolower(end($fileExt));
 
   $allowed = array('jpg', 'png', 'jpeg');
 
+/*Sjekker om filen er godkjent*/
   if (in_array($fileActualExt, $allowed)) {
     if($fileError === 0){
       if($fileSize < 1000000){
-        $fileNameNew = uniqid('' , true).".".$fileActualExt;
-        $fileDestination = 'uploads/' . $fileNameNew;
+        $fileNameNew = "profile".$id.".".$fileActualExt;
+        $fileDestination = 'uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
-        header("location: min_profil.php?uploadsuccess");
-      }else{
-        echo "filen din er for stor"
-      }
+        $sql = "UPDATE profileimg SET status=1 WHERE userid = '$id';";
+        $result = mysqli_query($kobling, $sql);
+        header("Location: ../PHP/min_profil.php?uploadsuccess");
+        echo "Your file has been uploaded";
 
-    }else {
-      echo "Det var en feil med opplastingen"
+      } else{
+        echo "This file is to big";
+      }
+    } else{
+      echo "There was an error";
     }
-  }else{
-    echo "Denne filtypen støttes ikke"
+  } else{
+    echo "You cannot upload this file-format";
   }
 }
  ?>

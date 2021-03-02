@@ -1,4 +1,6 @@
-<?php require_once '../shortcuts_php/logincheck.php';
+<?php
+session_start();
+require_once '../shortcuts_php/logincheck.php';
 require_once '../shortcuts_php/kobling.php'; ?>
 <!doctype html>
 
@@ -33,12 +35,26 @@ require_once '../shortcuts_php/kobling.php'; ?>
         $epost = $rad['email'];
       }
         ?>
-
-        <form class="bilde" action="upload.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="file" value="Velg profilbilde">
-          <button type="submit" name="submit">Lagre profilbildet</button>
+        <!-- Profilbilde opplasting(må jobbes mer med) -->
+          <!--<form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
+          <input type="file" name="profilbilde" value="Velg profilbilde">
+          <button type="submit" name="submit">UPLOAD</button>
         </form>
+      -->
+        <?php/*
+          $sqlImg = "SELECT * FROM profilbilde WHERE userID = '$id';";
+          $resultImg = $kobling->query($sqlImg);
+          $statusImg = $resultImg['status'];
+          if($statusImg == 0){
+            echo "<img src='../uploads/profile".$id.".png'>"
+          } else{
+            echo "<img src='../bilder/profile.png'>"
+          }*/
+        ?>
 
+
+
+        <!--Hovedinnhold siden-->
           <div class="mainContainer">
             <div class="upperContainer">
               <img src="../bilder/profile_image.png" alt="Profilbilde">

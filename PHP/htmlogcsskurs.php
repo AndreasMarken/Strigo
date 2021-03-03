@@ -12,11 +12,11 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
   <?php require_once '../shortcuts_php/header.php'; ?>
 
+  <?php  if (isset($_SESSION["brukerID"])) { ?>
+
 <?php
   if (isset($_SESSION["brukerID"])) {
-    echo "<div class='dropdownmenu'>";
-      echo "<img src='../bilder/Skjermbilde.PNG'>";
-    echo "</div>";
+  require_once '../shortcuts_php/togglemenu.php';
   }?>
 
 <?php
@@ -41,6 +41,13 @@ while ($rad = $resultat->fetch_assoc()) {
 }
 echo "</div>";
 ?>
+
+
+<?php }
+else {
+  header("location:index.php");
+  exit();
+}?>
 
   </body>
 

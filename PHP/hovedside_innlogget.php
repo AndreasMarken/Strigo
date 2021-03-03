@@ -14,10 +14,8 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 <?php
   if (isset($_SESSION["brukerID"])) {
-    echo "<div class='dropdownmenu'>";
-      echo "<img src='../bilder/Skjermbilde.PNG'>";
-    echo "</div>";
-  }?>
+    require_once '../shortcuts_php/togglemenu.php';
+    }?>
 
 <div class=oversiktsmeny>
   <?php

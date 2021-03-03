@@ -16,9 +16,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
         <?php require_once '../shortcuts_php/header.php';
 
           if (isset($_SESSION["brukerID"])) {
-            echo "<div class='dropdownmenu'>";
-              echo "<img src='../bilder/Skjermbilde.PNG'>";
-            echo "</div>";
+            require_once '../shortcuts_php/togglemenu.php';
           }
 
 // Lager variabler for brukerID sitt navn, brukernavn og email//

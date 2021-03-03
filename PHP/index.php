@@ -43,7 +43,7 @@
   </br>
     Noen av de skreddersydde tilbudene vi kan tilby deg er:
   <ul>
-    <li>Pioneer: For deg som ønskerr 1 bruker</li>
+    <li>Pioneer: For deg som ønsker 1 bruker</li>
     <li>Family: For deg som ønsker opptil 5 brukere</li>
     <li>Team: For deg som ønsker opptil 30 brukere</li>
     <li>Community: For deg som ønsker opptil 60 brukere</li>

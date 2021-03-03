@@ -21,12 +21,39 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 <div class=oversiktsmeny>
   <?php
+
  if (isset($_SESSION["brukerID"])) {
    echo "";
    echo "<div class='minprofil'>";
-    echo "<a href='../PHP/min_profil.php'><img src='../bilder/profile.png' width='60px'></a>";
+   echo "<a href='../PHP/min_profil.php'>";
 
-    $id = $_SESSION["brukerID"];
+    /*Profilbilde*/
+
+      $id = $_SESSION["brukerID"];
+
+      $sql1 = "SELECT * FROM profilbilde WHERE userID = '$id';";
+      $result = $kobling->query($sql1);
+
+      if (!$result) {
+        die("Noe gikk galt med spørringen: " . $kobling->error);
+      }
+
+      while ($rad = $result->fetch_assoc()) {
+        $status = $rad['status'];
+  }
+
+    if($status == 1){
+      echo "<img src='../uploads/profile".$id.".jpg' width='60px'>";
+    } else{
+      echo "<img src='../bilder/profile.png' width='60px'>";
+    }
+
+    "</a>";
+/*Profilbilde slutt*/
+
+
+
+
     $sql = "SELECT * FROM student WHERE brukerID = $id";
     $resultat = $kobling->query($sql);
 
@@ -38,6 +65,13 @@ require_once '../shortcuts_php/kobling.php'; ?>
   echo " <a href='../PHP/min_profil.php'><h3>$rad[navn]</h3></a>";
 }
    echo "</div>";
+
+
+
+
+
+
+
 
    echo "<div class='fullførtkapitler'>";
    echo "<img src='../bilder/bøker.png' width='40px'>";

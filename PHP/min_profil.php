@@ -41,6 +41,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
         <!--Hovedinnhold siden-->
           <div class="mainContainer">
             <div class="upperContainer">
+
               <!-- Profilbilde -->
               <?php
                 $id = $_SESSION["brukerID"];
@@ -55,14 +56,14 @@ require_once '../shortcuts_php/kobling.php'; ?>
                 while ($rad = $result->fetch_assoc()) {
                   $status = $rad['status'];
             }
-
-              if($status == 1){
+                if($status == 1){
                 echo "<img src='../uploads/profile".$id.".jpg'>";
               } else{
                 echo "<img src='../bilder/profile.png'>";
               }
 
               ?>
+          
 
                 <form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="profilbilde" value="Velg profilbilde">

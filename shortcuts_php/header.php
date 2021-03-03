@@ -46,7 +46,7 @@ body {
   background-color: #3F7075;
   margin: -10px;
   margin-bottom: 10px;
-  width: 101.4%;
+  width: 100%;
   height: 75px;
 }
 
@@ -64,13 +64,13 @@ body {
 }
 
 
-ul {
+.knapper_innlogget ul, .knapper_ikke_innlogget ul{
   list-style-type: none;
   padding: 0;
 
 }
 
-ul li {
+.knapper_innlogget ul li, .knapper_ikke_innlogget ul li{
   display: inline;
 
 }

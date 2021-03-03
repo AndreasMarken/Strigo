@@ -16,12 +16,12 @@ if (isset($_POST['submit'])) {
   $fileType = $file['type'];
 
   $fileExt = explode('.' , $fileName); /*Lager et array med filnavn og extention ved å splitte stringen $fileName ved punktum*/
-  $fileActualExt = strtolower(end($fileExt)); /*velger å gjøre om til små bokstaver, og velge siste del av arrayen*/
+  $fileActualExt = strtolower(end($fileExt));
 
-  $allowed = "jpg";
+  $allowed = array('jpg');
 
 /*Sjekker om filen er godkjent*/
-  if ($fileActualExt = $allowed)) {
+  if (in_array($fileActualExt, $allowed)) {
     if($fileError === 0){
       if($fileSize < 1000000){
         $fileNameNew = "profile".$id.".".$fileActualExt;

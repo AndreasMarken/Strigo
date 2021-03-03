@@ -156,6 +156,8 @@ echo "</div>";
 }
 ?>
 
+<?php require_once '../shortcuts_php/footer.php';?>
+
   </body>
 
 </html>

@@ -41,7 +41,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
         <!--Hovedinnhold siden-->
           <div class="mainContainer">
             <div class="upperContainer">
-
+              <a href="hovedside_innlogget.php">TIL HOVEDMENY</a>
               <!-- Profilbilde -->
               <?php
                 $id = $_SESSION["brukerID"];
@@ -63,7 +63,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
               }
 
               ?>
-          
+
 
                 <form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="profilbilde" value="Velg profilbilde">
@@ -89,22 +89,26 @@ require_once '../shortcuts_php/kobling.php'; ?>
             </div>
           </div>
 
+          <?php if(isset($_POST['lagre'])){
+          $new_navn = $_POST['navn'];
+          $id = $_SESSION["brukerID"];
+          $new_brukernavn = $_POST['brukernavn'];
+          $new_epost = $_POST['epost'];
+
+          $sql2 = ("UPDATE student
+                    SET navn = '$new_navn', brukernavn = '$new_brukernavn', email = '$new_epost'
+                    WHERE brukerID = '$id';");
+
+          $result = $kobling->query($sql2);
+
+           header("location:min_profil.php");
+
+          }
+          ?>
+
+          <?php require_once '../shortcuts_php/footer.php';?>
+
+
   </body>
+
 </html>
-
-<?php if(isset($_POST['lagre'])){
-$new_navn = $_POST['navn'];
-$id = $_SESSION["brukerID"];
-$new_brukernavn = $_POST['brukernavn'];
-$new_epost = $_POST['epost'];
-
-$sql2 = ("UPDATE student
-          SET navn = '$new_navn', brukernavn = '$new_brukernavn', email = '$new_epost'
-          WHERE brukerID = '$id';");
-
-$result = $kobling->query($sql2);
-
- header("location:min_profil.php");
-
-}
-?>

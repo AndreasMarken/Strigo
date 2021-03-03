@@ -82,6 +82,9 @@ function createUser($kobling, $navn, $email, $brukernavn, $passord) {
  mysqli_stmt_bind_param($stmt, "ssss", $navn, $email, $brukernavn, $hashedPwd);
  mysqli_stmt_execute($stmt);
  mysqli_stmt_close($stmt);
+ $sql3 = "INSERT INTO profilbilde (userID, status) VALUES (LAST_INSERT_ID(),0);";
+ $resultat = $kobling->query($sql3);
+
  header("location: ../PHP/registrer.php?error=none");
  exit();
 }

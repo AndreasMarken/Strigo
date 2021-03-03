@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/registrer.css">
 
   </head>
+  <body>
 
 <?php require_once '../shortcuts_php/header.php' ; ?>
 
@@ -49,8 +50,6 @@ if (isset($_GET["error"])) {
   }
 }
  ?>
-
-      </div> <!-- Body-->
 
   </body>
 

@@ -46,7 +46,7 @@ body {
   background-color: #3F7075;
   margin: -10px;
   margin-bottom: 10px;
-  width: 102%;
+  width: 101.4%;
   height: 75px;
 }
 

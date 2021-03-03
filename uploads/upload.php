@@ -16,30 +16,29 @@ if (isset($_POST['submit'])) {
   $fileType = $file['type'];
 
   $fileExt = explode('.' , $fileName); /*Lager et array med filnavn og extention ved å splitte stringen $fileName ved punktum*/
-  $fileActualExt = strtolower(end($fileExt));
+  $fileActualExt = strtolower(end($fileExt)); /*velger å gjøre om til små bokstaver, og velge siste del av arrayen*/
 
-  $allowed = array('jpg', 'png', 'jpeg');
+  $allowed = "jpg";
 
 /*Sjekker om filen er godkjent*/
-  if (in_array($fileActualExt, $allowed)) {
+  if ($fileActualExt = $allowed)) {
     if($fileError === 0){
       if($fileSize < 1000000){
         $fileNameNew = "profile".$id.".".$fileActualExt;
-        $fileDestination = 'uploads/'.$fileNameNew;
+        $fileDestination = '../uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
-        $sql = "UPDATE profileimg SET status=1 WHERE userid = '$id';";
+        $sql = "UPDATE profilbilde SET status=1 WHERE userID = '$id';";
         $result = mysqli_query($kobling, $sql);
         header("Location: ../PHP/min_profil.php?uploadsuccess");
-        echo "Your file has been uploaded";
 
       } else{
-        echo "This file is to big";
+        echo "Denne filen er for stor";
       }
     } else{
-      echo "There was an error";
+      echo "Det oppsto et problem";
     }
   } else{
-    echo "You cannot upload this file-format";
+    echo "Denne filtypen støttes ikke";
   }
 }
  ?>

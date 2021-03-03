@@ -20,6 +20,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
               echo "<img src='../bilder/Skjermbilde.PNG'>";
             echo "</div>";
           }
+
 // Lager variabler for brukerID sitt navn, brukernavn og email//
           $id = $_SESSION["brukerID"];
           $sql1 = "SELECT * from student WHERE brukerID = $id";
@@ -35,32 +36,42 @@ require_once '../shortcuts_php/kobling.php'; ?>
         $epost = $rad['email'];
       }
         ?>
-        <!-- Profilbilde opplasting(må jobbes mer med) -->
-          <!--<form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="profilbilde" value="Velg profilbilde">
-          <button type="submit" name="submit">UPLOAD</button>
-        </form>
-      -->
-        <?php/*
-          $sqlImg = "SELECT * FROM profilbilde WHERE userID = '$id';";
-          $resultImg = $kobling->query($sqlImg);
-          $statusImg = $resultImg['status'];
-          if($statusImg == 0){
-            echo "<img src='../uploads/profile".$id.".png'>"
-          } else{
-            echo "<img src='../bilder/profile.png'>"
-          }*/
-        ?>
-
 
 
         <!--Hovedinnhold siden-->
           <div class="mainContainer">
             <div class="upperContainer">
-              <img src="../bilder/profile_image.png" alt="Profilbilde">
-              <button type="button" name="byttProfilbilde">BYTT PROFILBILDE</button>
+              <!-- Profilbilde -->
+              <?php
+                $id = $_SESSION["brukerID"];
+
+                $sql1 = "SELECT * FROM profilbilde WHERE userID = '$id';";
+                $result = $kobling->query($sql1);
+
+                if (!$result) {
+                  die("Noe gikk galt med spørringen: " . $kobling->error);
+                }
+
+                while ($rad = $result->fetch_assoc()) {
+                  $status = $rad['status'];
+            }
+
+              if($status == 1){
+                echo "<img src='../uploads/profile".$id.".jpg'>";
+              } else{
+                echo "<img src='../bilder/profile.png'>";
+              }
+
+              ?>
+
+                <form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="profilbilde" value="Velg profilbilde">
+                <button type="submit" name="submit">OPPDATER BILDE</button>
+              </form>
             </div>
 
+
+            <!-- navn, brukernavn, epost -->
             <div class="lowerContainer">
               <form action="" method="POST">
                 <label for="navn">NAVN:</label>

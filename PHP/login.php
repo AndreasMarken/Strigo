@@ -82,8 +82,6 @@ if (isset($_GET["error"])) {
 </div>
 
 
-      </div> <!-- Body-->
-
   </body>
 
 </html>

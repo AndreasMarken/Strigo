@@ -24,7 +24,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
  if (isset($_SESSION["brukerID"])) {
    echo "";
    echo "<div class='minprofil'>";
-    echo "<img src='../bilder/profile.png' width='60px'>";
+    echo "<a href='../PHP/min_profil.php'><img src='../bilder/profile.png' width='60px'></a>";
 
     $id = $_SESSION["brukerID"];
     $sql = "SELECT * FROM student WHERE brukerID = $id";
@@ -35,7 +35,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 	}
   while ($rad = $resultat->fetch_assoc()) {
-  echo " <h3>$rad[navn]</h3>";
+  echo " <a href='../PHP/min_profil.php'><h3>$rad[navn]</h3></a>";
 }
    echo "</div>";
 
@@ -84,10 +84,10 @@ if (isset($_SESSION["brukerID"])) {
     echo "<div class='øverste_rad'>";
       echo "<div class='liten_boks_medtekst'>";
         echo "<div class='bildene'>";
-          echo "<a href=''><img src='../bilder/html.png' width='100px'></a>";
-          echo "<a href=''><img src='../bilder/css.png' width='100px'></a>";
+          echo "<a href='htmlogcsskurs.php'><img src='../bilder/html.png' width='100px'></a>";
+          echo "<a href='htmlogcsskurs.php'><img src='../bilder/css.png' width='100px'></a>";
         echo "</div>";
-          echo "<a href=''><h4>HTML og CSS</h4></a>";
+          echo "<a href='htmlogcsskurs.php'><h4>HTML og CSS</h4></a>";
       echo "</div>";
 
       echo "<div class='liten_boks_medtekst'>";
@@ -121,8 +121,6 @@ echo "</div>";
 
 }
 ?>
-
-      </div> <!-- Body-->
 
   </body>
 

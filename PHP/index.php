@@ -15,8 +15,6 @@
 
   <img src="../bilder/bilde2.png">
 
-      </div> <!-- Body-->
-
   </body>
 
 </html>

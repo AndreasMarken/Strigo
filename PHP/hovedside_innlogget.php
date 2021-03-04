@@ -10,17 +10,17 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
   </head>
 
-  <?php require_once '../shortcuts_php/header.php'; ?>
+    <?php  if (isset($_SESSION["brukerID"])) { ?>
 
-<?php
-  if (isset($_SESSION["brukerID"])) {
+  <?php require_once '../shortcuts_php/header.php';
+
     require_once '../shortcuts_php/togglemenu.php';
-    }?>
+    ?>
 
 <div class=oversiktsmeny>
+
   <?php
 
- if (isset($_SESSION["brukerID"])) {
    echo "";
    echo "<div class='minprofil'>";
    echo "<a href='../PHP/min_profil.php'>";
@@ -98,7 +98,6 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
    if (!$resultat) {
    die("Noe gikk galt med spørringen: " . $kobling->error);
-
    }
 
    while ($rad = $resultat->fetch_assoc()) {
@@ -107,11 +106,9 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
    echo "</div>";
 
-}
 ?>
 </div>
 <?php
-if (isset($_SESSION["brukerID"])) {
   echo "<div class='små_bokser'>";
     echo "<div class='øverste_rad'>";
       echo "<div class='liten_boks_medtekst'>";
@@ -151,10 +148,14 @@ if (isset($_SESSION["brukerID"])) {
   echo "</div>";
 echo "</div>";
 
-}
-?>
+ require_once '../shortcuts_php/footer.php';
 
-<?php require_once '../shortcuts_php/footer.php';?>
+}
+
+else {
+ header("location:index.php");
+ exit();
+}?>
 
   </body>
 

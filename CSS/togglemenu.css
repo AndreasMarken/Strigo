@@ -6,7 +6,7 @@
   left: 0;
   background-color: #FFF;
   z-index: 1000;
-  margin-top: 75px;
+  margin-top: 80px;
 }
 
 .btn-toggle-nav {
@@ -15,7 +15,7 @@
   background-color: #3F7075;
   background-image: url('../bilder/menu.png');
   background-repeat: no-repeat;
-  background-size: 40%;
+  background-size: 60%;
   background-position: center;
   cursor: pointer;
   z-index: 1000;
@@ -29,7 +29,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: calc(100vh - 135px);
+  height: calc(100vh - 140px);
   visibility: hidden;
   padding: 0 5px;
   background-color: #3F7075;

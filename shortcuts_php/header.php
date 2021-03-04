@@ -21,10 +21,10 @@
         if (!isset($_SESSION["brukerID"])) {
             echo "<div class='knapper_ikke_innlogget'>";
             echo "  <ul>";
-            echo "    <li><a href='../php/hovedside.php'>Praktisk info</a></li>";
-            echo "    <li><a href='../php/bildegalleri.php'>For skolene</a></li>";
-            echo "    <li><a href='../php/linkside.php'>For elever</a></li>";
-            echo "    <li><a href='../php/gjestebok.php'><img src='../bilder/2.png' height='20px'></a></li>";
+            echo "    <li><a href=''>Praktisk info</a></li>";
+            echo "    <li><a href=''>For skolene</a></li>";
+            echo "    <li><a href=''>For elever</a></li>";
+            echo "    <li><a href=''><img src='../bilder/2.png' height='20px'></a></li>";
             echo "    <li><a href='../PHP/login.php'>Logg inn</a></li>";
             echo "  </ul>";
             echo "</div>";
@@ -37,17 +37,29 @@
 <style>
 
 body {
-  background-color: #CFF3F7
+  background-color: #CFF3F7;
+  margin: 0;
 }
 
 .header {
   display: flex;
   flex-direction: row;
   background-color: #3F7075;
-  margin-left: -10px;
   margin-bottom: 10px;
-  width: 100%;
   height: 75px;
+  padding-bottom: 5px;
+
+}
+
+.header img {
+  margin:3px;
+}
+
+.header h1 {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .knapper_innlogget{
@@ -71,12 +83,12 @@ body {
 }
 
 .knapper_innlogget ul li, .knapper_ikke_innlogget ul li{
-  display: inline;
+  display: block;
+  float: left;
 
 }
 
 ul a {
-  width: 240px;
   padding: 5px;
   border-radius: 3px;
   margin: 2px;

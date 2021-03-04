@@ -15,11 +15,8 @@ require_once '../shortcuts_php/kobling.php'; ?>
   <?php  if (isset($_SESSION["brukerID"])) { ?>
 
 <?php
-  if (isset($_SESSION["brukerID"])) {
   require_once '../shortcuts_php/togglemenu.php';
-  }?>
 
-<?php
 $sql = "SELECT * FROM chapter WHERE Main_area_class_class_id = 1;";
 
 $resultat = $kobling->query($sql);
@@ -40,10 +37,9 @@ while ($rad = $resultat->fetch_assoc()) {
 
 }
 echo "</div>";
-?>
 
-
-<?php }
+ }
+ 
 else {
   header("location:index.php");
   exit();

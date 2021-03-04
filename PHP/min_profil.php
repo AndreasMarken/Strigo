@@ -3,7 +3,9 @@ session_start();
 require_once '../shortcuts_php/logincheck.php';
 require_once '../shortcuts_php/kobling.php'; ?>
 <!doctype html>
-
+<?php
+if (isset($_SESSION["brukerID"])) {
+ ?>
 <html lang="nb">
   <head>
     <meta charset="utf-8">
@@ -12,12 +14,9 @@ require_once '../shortcuts_php/kobling.php'; ?>
   </head>
   <body>
 
-
         <?php require_once '../shortcuts_php/header.php';
 
-          if (isset($_SESSION["brukerID"])) {
             require_once '../shortcuts_php/togglemenu.php';
-          }
 
 // Lager variabler for brukerID sitt navn, brukernavn og email//
           $id = $_SESSION["brukerID"];
@@ -108,5 +107,11 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 
   </body>
+<?php }
+else {
+  header("location:index.php");
+  exit();
+}
+?>
 
 </html>

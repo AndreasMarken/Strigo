@@ -1,7 +1,3 @@
-body{
-  margin:0px;
-}
-
 .oversiktsmeny {
   display: flex;
   flex-direction: row;
@@ -10,7 +6,7 @@ body{
   align-items: center;
   width: 790px;
   margin: 0 auto;
-}
+  }
 
 .minprofil {
   display: flex;

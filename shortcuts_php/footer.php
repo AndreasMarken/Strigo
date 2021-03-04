@@ -22,8 +22,8 @@ footer{
 }
 
 .footer {
-  position: static;
-  bottom: 0;
+  display: inline-block;
+  vertical-align: bottom;
   width: 100%;
 }
 

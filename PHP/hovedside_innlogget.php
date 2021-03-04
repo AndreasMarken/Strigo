@@ -120,13 +120,13 @@ require_once '../shortcuts_php/kobling.php'; ?>
       echo "</div>";
 
       echo "<div class='liten_boks_medtekst'>";
-        echo "<a href=''><img src='../bilder/js.png' width='150px'></a>";
-        echo "<a href=''><h4>Javascript</h4></a>";
+        echo "<a href='javakurs.php'><img src='../bilder/js.png' width='150px'></a>";
+        echo "<a href='javakurs.php'><h4>Javascript</h4></a>";
       echo "</div>";
 
       echo "<div class='liten_boks_medtekst'>";
-        echo "<a href=''><img src='../bilder/php-mysql.png' width='200px'></a>";
-        echo "<a href=''><h4>PHP og Mysql</h4></a>";
+        echo "<a href='phpogmysqlkurs.php'><img src='../bilder/php-mysql.png' width='200px'></a>";
+        echo "<a href='phpogmysqlkurs.php'><h4>PHP og Mysql</h4></a>";
       echo "</div>";
     echo "</div>";
 

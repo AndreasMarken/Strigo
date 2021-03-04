@@ -17,7 +17,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 <?php
   require_once '../shortcuts_php/togglemenu.php';
 
-$sql = "SELECT * FROM chapter WHERE Main_area_class_class_id = 1;";
+$sql = "SELECT * FROM chapter WHERE Main_area_class_class_id = 3;";
 
 $resultat = $kobling->query($sql);
 
@@ -26,13 +26,13 @@ die("Noe gikk galt med spørringen: " . $kobling->error);
 
 }
 echo "<div class='kapittel_liste'>";
-echo "<h1> Kurs i HTML og CSS</h1>";
+echo "<h1> Kurs i PHP og mysql</h1>";
 
 while ($rad = $resultat->fetch_assoc()) {
   $chapter_id  = $rad[id];
 
      echo "<ul>";
-     echo "<li><a href='courses.php?ID=$chapter_id'>Kapittel: $rad[chapter_name]</a></li>";
+     echo "<li><a href='phpcourses.php?ID=$chapter_id'>Kapittel: $rad[chapter_name]</a></li>";
      echo "</ul>";
 
 }

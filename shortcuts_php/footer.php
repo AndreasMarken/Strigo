@@ -1,3 +1,5 @@
+
+<div class="footer">
 <footer>
   <div>
     <img src = "../bilder/copyright.png">
@@ -6,7 +8,7 @@
   <a href="mailto:mail@yoursite.com">Epost: strigo@app.no</a>
   <div>Telefon: 47 47 47 47</div>
 </footer>
-
+</div>
 
 <style>
 footer{
@@ -17,6 +19,12 @@ footer{
   margin: 50px 0px 0px 0px;
   padding: 0px;
   background-color: #3F7075;
+}
+
+.footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
 }
 
 footer div, footer a{

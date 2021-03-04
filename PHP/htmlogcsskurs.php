@@ -32,7 +32,7 @@ while ($rad = $resultat->fetch_assoc()) {
   $chapter_id  = $rad[id];
 
      echo "<ul>";
-     echo "<li><a href='courses.php?ID=$chapter_id'>Kapittel: $rad[chapter_name]</a></li>";
+     echo "<li><a href='courses.php?ID=$chapter_id'>Kapittel: $rad[chapter_name]<i class='arrow_down'></i></a></li>";
      echo "</ul>";
 
 }

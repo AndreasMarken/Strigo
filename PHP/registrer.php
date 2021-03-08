@@ -6,24 +6,36 @@
     <title>Strigo</title>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/registrer.css">
+    <link rel="stylesheet" href="../CSS/register.css">
 
   </head>
   <body>
 
 <?php require_once '../shortcuts_php/header.php' ; ?>
 
-<div class="signup-form">
-  <h2>Registrer</h2>
-  <form action="../shortcuts_php/signup.inc.php" method="post">
-    <input type="text" name="navn" placeholder="Navn">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="uid" placeholder="Brukernavn">
-    <input type="password" name="pwd" placeholder="Passord">
-    <input type="password" name="pwdrepeat" placeholder="Gjenta passord">
-    <button type="submit" name="submit">Registrer</button>
-  </form>
-</div>
+<div class="bigContainer">
+
+<div class="mainContainer">
+
+  <div class="signup-form">
+    <h2>Registrer</h2>
+    <form action="../shortcuts_php/signup.inc.php" method="post">
+      <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn">
+      <h3>Email:</h3><input type="text" name="email" placeholder="Email">
+      <h3>Brukernavn:</h3><input type="text" name="uid" placeholder="Brukernavn">
+      <h3>Passord:</h3><input type="password" name="pwd" placeholder="Passord">
+      <h3>Gjenta passordet:</h3><input type="password" name="pwdrepeat" placeholder="Gjenta passord">
+
+      <div class="submit_knapp">
+
+      <button type="submit" name="submit">Registrer</button>
+
+    </div>
+
+    </form>
+  </div>
+
+<div class="errormessage">
 
 <?php
 if (isset($_GET["error"])) {
@@ -50,6 +62,14 @@ if (isset($_GET["error"])) {
   }
 }
  ?>
+
+</div>
+
+</div>
+
+</div>
+
+<?php require_once '../shortcuts_php/footer.php' ; ?>
 
   </body>
 

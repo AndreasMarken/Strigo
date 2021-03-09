@@ -22,8 +22,10 @@ footer{
 }
 
 .footer {
-  display: inline-block;
-  vertical-align: bottom;
+  clear:both;
+  position: relative;
+  height: 125px;
+  margin-top: 125px;
   width: 100%;
 }
 

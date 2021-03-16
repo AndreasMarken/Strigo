@@ -39,7 +39,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 <?php
 
-  $sql = "SELECT * FROM chapter_content;";
+  $sql = "SELECT * FROM lection;";
 
   $resultat = $kobling->query($sql);
 
@@ -53,7 +53,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
     if (isset($_GET["ID"])) {
       if ($_GET["ID"] == "$content_id"){
 
-        $sql2 = "SELECT * FROM chapter_content WHERE content_id = $content_id;";
+        $sql2 = "SELECT * FROM lection WHERE lection_id = $content_id;";
 
         $resultat2 = $kobling->query($sql2);
 

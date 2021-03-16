@@ -12,9 +12,6 @@
 
 <?php require_once '../shortcuts_php/header.php' ; ?>
 
-
-
-
 <div class="storboks">
 
   <div class="venstreboks">

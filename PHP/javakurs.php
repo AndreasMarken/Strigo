@@ -17,7 +17,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 <?php
   require_once '../shortcuts_php/togglemenu.php';
 
-$sql = "SELECT * FROM chapter WHERE Main_area_class_class_id = 2;";
+$sql = "SELECT * FROM subChapter WHERE chapter_id = 2;";
 
 $resultat = $kobling->query($sql);
 
@@ -32,7 +32,7 @@ while ($rad = $resultat->fetch_assoc()) {
   $chapter_id  = $rad[id];
 
      echo "<ul>";
-     echo "<li><a href='javacourses.php?ID=$chapter_id'>Kapittel: $rad[chapter_name]</a></li>";
+     echo "<li><a href='javacourses.php?ID=$chapter_id'>Kapittel: $rad[subChapter_name]</a></li>";
      echo "</ul>";
 
 }

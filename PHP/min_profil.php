@@ -34,7 +34,6 @@ if (isset($_SESSION["brukerID"])) {
       }
         ?>
 
-
         <!--Hovedinnhold siden-->
           <div class="mainContainer">
             <div class="upperContainer">
@@ -61,13 +60,11 @@ if (isset($_SESSION["brukerID"])) {
 
               ?>
 
-
                 <form class="bilde" action="../uploads/upload.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="profilbilde" value="Velg profilbilde">
                 <button type="submit" name="submit">OPPDATER BILDE</button>
               </form>
             </div>
-
 
             <!-- navn, brukernavn, epost -->
             <div class="lowerContainer">
@@ -104,7 +101,6 @@ if (isset($_SESSION["brukerID"])) {
           ?>
 
           <?php require_once '../shortcuts_php/footer.php';?>
-
 
   </body>
 <?php }

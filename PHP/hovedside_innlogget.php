@@ -49,9 +49,6 @@ require_once '../shortcuts_php/kobling.php'; ?>
     "</a>";
 /*Profilbilde slutt*/
 
-
-
-
     $sql = "SELECT * FROM student WHERE brukerID = $id";
     $resultat = $kobling->query($sql);
 
@@ -64,19 +61,11 @@ require_once '../shortcuts_php/kobling.php'; ?>
 }
    echo "</div>";
 
-
-
-
-
-
-
-
    echo "<div class='fullførtkapitler'>";
    echo "<img src='../bilder/bøker.png' width='40px'>";
 
-
    $id = $_SESSION["brukerID"];
-   $sql = "SELECT COUNT(chapter_id) AS chapters_completed FROM Student_chapter_complete WHERE student_id = $id";
+   $sql = "SELECT COUNT(subChapter_id) AS subCapters_completed FROM Student_subChapter_complete WHERE student_id = $id";
    $resultat = $kobling->query($sql);
 
    if (!$resultat) {
@@ -85,7 +74,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
    }
 
    while ($rad = $resultat->fetch_assoc()) {
-        echo "<h3>Fullførte<br> kapitler: "."$rad[chapters_completed]</h3> ";
+        echo "<h3>Fullførte<br> kapitler: "."$rad[subChapters_completed]</h3> ";
    }
 
    echo "</div>";

@@ -2,7 +2,7 @@
 $tjener = "localhost";
 $brukernavndb = "root";
 $passorddb = "root";
-$database = "strigo";
+$database = "strigo2";
 $kobling = new mysqli ($tjener, $brukernavndb, $passorddb, $database);
 
 if ($kobling->connect_error) {

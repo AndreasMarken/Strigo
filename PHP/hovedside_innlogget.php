@@ -65,7 +65,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
    echo "<img src='../bilder/bøker.png' width='40px'>";
 
    $id = $_SESSION["brukerID"];
-   $sql = "SELECT COUNT(subChapter_id) AS subCapters_completed FROM Student_subChapter_complete WHERE student_id = $id";
+   $sql = "SELECT COUNT(subChapter_id) AS subChapters_completed FROM Student_subChapter_complete WHERE student_id = $id";
    $resultat = $kobling->query($sql);
 
    if (!$resultat) {

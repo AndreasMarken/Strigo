@@ -1,0 +1,75 @@
+.mainContainer{
+  width: 850px;
+  margin: auto;
+  background-color: black;
+  height: auto;
+}
+
+.upperContainer{
+  display: flex;
+  flex-direction: column;
+  height: 325px;
+  background-color: #3F7075;
+  margin: 0px;
+}
+
+.upperContainer a{
+  text-decoration: none;
+  color: white;
+  background-color: #69b9c2;
+  width: 150px;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 10px;
+}
+
+.lowerContainer{
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  background-color: #69b9c2;
+}
+
+.upperContainer img{
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  border: solid black 1px;
+  margin: 0px auto;
+}
+
+.upperContainer button{
+  height: 30px;
+  width: 150px;
+  margin: auto;
+  background-color: #69b9c2;
+  COLOR: white;
+}
+
+label{
+  width: 135px;
+  display: inline-block;
+  height: 40px;
+}
+
+input[type=text]{
+  height: 40px;
+  width: 300px;
+}
+
+input[type=email]{
+  height: 40px;
+  width: 300px;
+}
+
+input[type=submit]{
+  height: 30px;
+  width: 70px;
+  margin-left: 378px;
+  margin-top: 10px;
+}
+
+form {
+  margin: auto;
+}

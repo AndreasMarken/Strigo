@@ -21,11 +21,10 @@
         if (!isset($_SESSION["brukerID"])) {
             echo "<div class='knapper_ikke_innlogget'>";
             echo "  <ul>";
-            echo "    <li><a href=''>Praktisk info</a></li>";
-            echo "    <li><a href=''>For skolene</a></li>";
-            echo "    <li><a href=''>For elever</a></li>";
-            echo "    <li><a href=''><img src='../bilder/2.png' height='20px'></a></li>";
-            echo "    <li><a href='../PHP/login.php'>Logg inn</a></li>";
+            echo "    <li><a href='../PHP/teachermainpage.php'>Hjem</a></li>";
+            echo "    <li><a href='../PHP/teacherregister.php'>Registrer deg</a></li>";
+            echo "    <li><a href='../PHP/teacherlogin.php'>Logg inn</a></li>";
+            echo "    <li><a href='../../student/PHP/index.php'>Til elevsiden</a></li>";
             echo "  </ul>";
             echo "</div>";
           }

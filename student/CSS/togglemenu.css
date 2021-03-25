@@ -28,8 +28,8 @@
 .nav-sidebar {
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: calc(100vh - 140px);
+  top: 5px;
+  height: 500px;
   visibility: hidden;
   padding: 0 5px;
   background-color: #3F7075;

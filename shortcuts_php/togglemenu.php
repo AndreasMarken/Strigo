@@ -20,12 +20,12 @@
     <aside class="nav-sidebar">
       <ul>
         <li><span>Navigasjon</span></li>
-        <li><a href="../PHP/hovedside_innlogget.php">Hjemmeside</a></li>
-        <li><a href="../PHP/htmlogcsskurs.php">HTML + CSS</a></li>
-        <li><a href="../PHP/javakurs.php">Javascript</a></li>
-        <li><a href="../PHP/phpogmysqlkurs.php">PHP + Mysql</a></li>
-        <li><a href="../PHP/min_profil.php">Profil</a></li>
-        <li><a href="../PHP/404.php">Kontakt oss</a></li>
+        <li><a href="../img/hovedside_innlogget.php">Hjemmeside</a></li>
+        <li><a href="../img/htmlogcsskurs.php">HTML + CSS</a></li>
+        <li><a href="../img/javakurs.php">Javascript</a></li>
+        <li><a href="../img/phpogmysqlkurs.php">PHP + Mysql</a></li>
+        <li><a href="../img/min_profil.php">Profil</a></li>
+        <li><a href="../img/404.php">Kontakt oss</a></li>
       </ul>
     </aside>
 

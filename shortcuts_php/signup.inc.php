@@ -12,23 +12,23 @@ if (isset($_POST["submit"])) {
   require_once 'functions.php';
 
   if (emptyInputSignup($navn, $email, $brukernavn, $passord, $pwdrepeat) !== false) {
-    header("location: ../PHP/registrer.php?error=emptyinput");
+    header("location: ../pages/registrer.php?error=emptyinput");
     exit();
   }
   if (invalidUid($brukernavn) !== false) {
-    header("location: ../PHP/registrer.php?error=invaliduid");
+    header("location: ../pages/registrer.php?error=invaliduid");
     exit();
   }
   if (invalidEmail($email) !== false) {
-    header("location: ../PHP/registrer.php?error=invalidemail");
+    header("location: ../pages/registrer.php?error=invalidemail");
     exit();
   }
   if (pwdMatch($passord, $pwdrepeat) !== false) {
-    header("location: ../PHP/registrer.php?error=passwordsdontmatch");
+    header("location: ../pages/registrer.php?error=passwordsdontmatch");
     exit();
   }
   if (uidExist($kobling, $brukernavn, $email) !== false) {
-      header("location: ../PHP/registrer.php?error=usernametaken");
+      header("location: ../pages/registrer.php?error=usernametaken");
       exit();
     }
 
@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
 
 }
 else {
-  header("location: ../PHP/registrer.php");
+  header("location: ../pages/registrer.php");
   exit();
 }
 

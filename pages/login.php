@@ -18,9 +18,9 @@
 
     <div class="Logg_inn_med">
       <h2>Logg inn med:</h2>
-      <a href="404.php"><img src="../bilder/google.png" width="200px"></a>
-      <a href="404.php"><img src="../bilder/facebook.png" width="100px"></a>
-      <a href="404.php"><img src="../bilder/feide.png" width="200px"></a>
+      <a href="404.php"><img src="../img/google.png" width="200px"></a>
+      <a href="404.php"><img src="../img/facebook.png" width="100px"></a>
+      <a href="404.php"><img src="../img/feide.png" width="200px"></a>
     </div>
 
   </div>

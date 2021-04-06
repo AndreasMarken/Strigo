@@ -6,7 +6,7 @@
     <title>Strigo</title>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/teacher_login.css">
 
   </head>
 

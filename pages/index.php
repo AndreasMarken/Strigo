@@ -29,12 +29,12 @@
   </ul>
     Ta skrittet du også da vel, bli med på fremtidens skole med Strigo!
   </div>
-  <img src="../bilder/bilde1.png">
+  <img src="../img/bilde1.png">
 </div>
 
 
 <div class="lowerContainer">
-  <img src="../bilder/bilde2.png">
+  <img src="../img/bilde2.png">
   <div>
     Vi tilbyr vår tjeneste til både skoler og enkeltpersoner over hele landet.
   </br>

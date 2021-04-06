@@ -43,7 +43,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
     if($status == 1){
       echo "<img src='../uploads/profile".$id.".jpg' width='60px'>";
     } else{
-      echo "<img src='../bilder/profile.png' width='60px'>";
+      echo "<img src='../img/profile.png' width='60px'>";
     }
 
     "</a>";
@@ -62,7 +62,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
    echo "</div>";
 
    echo "<div class='fullførtkapitler'>";
-   echo "<img src='../bilder/bøker.png' width='40px'>";
+   echo "<img src='../img/bøker.png' width='40px'>";
 
    $id = $_SESSION["brukerID"];
    $sql = "SELECT COUNT(subChapter_id) AS subChapters_completed FROM Student_subChapter_complete WHERE student_id = $id";
@@ -80,7 +80,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
    echo "</div>";
 
    echo "<div class='fullførtoppgaver'>";
-   echo "<img src='../bilder/task.png' width='50px'>";
+   echo "<img src='../img/task.png' width='50px'>";
    $id = $_SESSION["brukerID"];
    $sql = "SELECT COUNT(task_id) AS tasks_completed FROM student_task_complete WHERE student_id = $id";
    $resultat = $kobling->query($sql);
@@ -102,36 +102,36 @@ require_once '../shortcuts_php/kobling.php'; ?>
     echo "<div class='øverste_rad'>";
       echo "<div class='liten_boks_medtekst'>";
         echo "<div class='bildene'>";
-          echo "<a href='htmlogcsskurs.php'><img src='../bilder/html.png' width='100px'></a>";
-          echo "<a href='htmlogcsskurs.php'><img src='../bilder/css.png' width='100px'></a>";
+          echo "<a href='htmlogcsskurs.php'><img src='../img/html.png' width='100px'></a>";
+          echo "<a href='htmlogcsskurs.php'><img src='../img/css.png' width='100px'></a>";
         echo "</div>";
           echo "<a href='htmlogcsskurs.php'><h4>HTML og CSS</h4></a>";
       echo "</div>";
 
       echo "<div class='liten_boks_medtekst'>";
-        echo "<a href='javakurs.php'><img src='../bilder/js.png' width='150px'></a>";
+        echo "<a href='javakurs.php'><img src='../img/js.png' width='150px'></a>";
         echo "<a href='javakurs.php'><h4>Javascript</h4></a>";
       echo "</div>";
 
       echo "<div class='liten_boks_medtekst'>";
-        echo "<a href='phpogmysqlkurs.php'><img src='../bilder/php-mysql.png' width='200px'></a>";
+        echo "<a href='phpogmysqlkurs.php'><img src='../img/php-mysql.png' width='200px'></a>";
         echo "<a href='phpogmysqlkurs.php'><h4>PHP og Mysql</h4></a>";
       echo "</div>";
     echo "</div>";
 
   echo "<div class='andre_rad'>";
     echo "<div class='liten_boks_medtekst'>";
-      echo "<a href=''><img src='../bilder/spørsmålstegn.png' width='100px'></a>";
+      echo "<a href=''><img src='../img/spørsmålstegn.png' width='100px'></a>";
       echo "<a href=''><h4>Quiz og oppgaver</h4></a>";
     echo "</div>";
 
     echo "<div class='liten_boks_medtekst'>";
-      echo "<a href=''><img src='../bilder/forstørrelsesglass.png' width='100px'></a>";
+      echo "<a href=''><img src='../img/forstørrelsesglass.png' width='100px'></a>";
       echo "<a href=''><h4>Oppslagsverk</h4></a>";
     echo "</div>";
 
     echo "<div class='liten_boks_medtekst'>";
-      echo "<a href=''><img src='../bilder/x.png' width='100px'></a>";
+      echo "<a href=''><img src='../img/x.png' width='100px'></a>";
       echo "<a href=''><h4>Feilsøker</h4></a>";
     echo "</div>";
   echo "</div>";

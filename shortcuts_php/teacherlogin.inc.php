@@ -9,25 +9,15 @@ if (isset($_POST["submit"])) {
   require_once 'functions.php';
 
   if (emptyInputLogin($brukernavn, $pwd) !== false) {
-    header("location: ../PHP/login.php?error=emptyinput");
+    header("location: ../pages/teacherlogin.php?error=emptyinput");
     exit();
   }
 
-  loginUser($kobling, $brukernavn, $pwd);
+  loginUser_teacher($kobling, $brukernavn, $pwd);
 }
 else {
-  header("location: ../PHP/login.php");
+  header("location: ../pages/teacherlogin.php");
   exit();
 }
-
-
-
-
-
-
-
-
-
-
 
  ?>

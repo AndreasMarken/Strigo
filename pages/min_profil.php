@@ -55,7 +55,7 @@ if (isset($_SESSION["brukerID"])) {
                 if($status == 1){
                 echo "<img src='../uploads/profile".$id.".jpg'>";
               } else{
-                echo "<img src='../bilder/profile.png'>";
+                echo "<img src='../img/profile.png'>";
               }
 
               ?>

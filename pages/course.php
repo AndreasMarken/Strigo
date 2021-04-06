@@ -25,9 +25,9 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
     <div class="videoslide">
 
-      <iframe src="../bilder/video_nettverk.mp4" width="140px" height="90px"></iframe>
-      <iframe src="../bilder/video_nettverk.mp4" width="140px" height="90px"></iframe>
-      <iframe src="../bilder/video_nettverk.mp4" width="140px" height="90px"></iframe>
+      <iframe src="../img/video_nettverk.mp4" width="140px" height="90px"></iframe>
+      <iframe src="../img/video_nettverk.mp4" width="140px" height="90px"></iframe>
+      <iframe src="../img/video_nettverk.mp4" width="140px" height="90px"></iframe>
 
     </div>
 

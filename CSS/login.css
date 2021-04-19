@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  justify-content: center
+  justify-content: center;
 }
 
 .venstreboks {
@@ -27,6 +27,14 @@
 
 .høyreboks {
   background-color: #69B9C2;
+  display: none;
+}
+
+.teacherlogin:target {
+  display: block;
+}
+.studentlogin:target {
+  display: block;
 }
 
 .logginn-registrer{

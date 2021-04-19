@@ -13,12 +13,18 @@
 
 <?php require_once '../shortcuts_php/header.php' ; ?>
 
-<div class="bigContainer">
+<div class="studentsignup" id="studentregister">
+
+<div class="bigContainer" id="studentregister">
 
 <div class="mainContainer">
 
   <div class="signup-form">
-    <h2>Registrer</h2>
+    <h2>Elev registrering</h2>
+    <ul>
+      <li ><a class="current" href="registrer.php">Registrer deg som elev</a></li>
+      <li><a href="teacherregister.php">Registrer deg som lærer</a></li>
+  </ul>
     <form action="../shortcuts_php/signup.inc.php" method="post">
       <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn">
       <h3>Email:</h3><input type="text" name="email" placeholder="Email">
@@ -62,6 +68,8 @@ if (isset($_GET["error"])) {
   }
 }
  ?>
+
+</div>
 
 </div>
 

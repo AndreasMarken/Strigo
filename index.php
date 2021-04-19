@@ -26,6 +26,6 @@
         </style>
     </head>
     <body>
-        <a href="pages/index.php"><img class="flash" src="student/bilder/strigo_logo.png" /></a>
+        <a href="pages/index.php"><img class="flash" src="img/strigo_logo.png" /></a>
     </body>
 </html>

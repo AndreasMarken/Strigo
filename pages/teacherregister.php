@@ -16,7 +16,11 @@
 <div class="mainContainer">
 
   <div class="signup-form">
-    <h2>Registrer</h2>
+    <h2>Lærerregistrasjon</h2>
+    <ul>
+    <li ><a href="registrer.php">Registrer deg som elev</a></li>
+    <li><a class="current"href="teacherregister.php">Registrer deg som lærer</a></li>
+  </ul>
     <form action="../shortcuts_php/teachersignup.inc.php" method="post">
       <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn">
       <h3>Email:</h3><input type="text" name="email" placeholder="Email">

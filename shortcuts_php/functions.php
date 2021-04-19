@@ -186,12 +186,48 @@ function loginUser_teacher($kobling, $brukernavn, $pwd){
   }
   elseif ($checkPwd === true) {
     session_start();
-    $_SESSION["brukerID"] = $uidExists["idTeacher"];
+    $_SESSION["TeacherID"] = $uidExists["idTeacher"];
     $_SESSION["brukernavn"] = $uidExists["username"];
     header("location: ../pages/teacherloggedin.php");
     exit();
   }
 }
+
+
+function checkKeys($kobling, $randStr) {
+  $sql = "SELECT * FROM SchoolCode";
+  $result = $kobling->query($sql);
+
+    if (!$result) {
+      die("Noe gikk galt med spørringen: " . $kobling->error);
+    }
+
+    while ($row = mysqli_fetch_assoc($result)) {
+      if ($row['school_code'] == $randStr) {
+        $keyExists = true;
+        break;
+      } else {
+        $keyExists = false;
+      }
+    }
+
+    return $keyExists;
+  }
+
+  function generateKey($kobling) {
+    $keyLength = 8;
+    $str = "abcdefghijklmnopqrstuvwxyz123456789";
+    $randStr = substr(str_shuffle($str), 0, $keyLength);
+
+    $checkKey = checkKeys($kobling, $randStr);
+
+    while($checkKey == true) {
+      $randStr = substr(str_shuffle($str), 0, $keyLength);
+      $checkKey = checkKeys($kobling, $randStr);
+    }
+
+    return $randStr;
+  }
 
 
 

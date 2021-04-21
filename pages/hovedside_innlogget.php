@@ -23,7 +23,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
    echo "";
    echo "<div class='minprofil'>";
-   echo "<a href='../PHP/min_profil.php'>";
+   echo "<a href='min_profil.php'>";
 
     /*Profilbilde*/
 
@@ -41,6 +41,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
   }
 
     if($status == 1){
+      // echo "<img src='../uploads/profile".$id.".".$_SESSION["fileExt"]."' width='60px'>";
       echo "<img src='../uploads/profile".$id.".jpg' width='60px'>";
     } else{
       echo "<img src='../img/profile.png' width='60px'>";
@@ -57,7 +58,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
 	}
   while ($rad = $resultat->fetch_assoc()) {
-  echo " <a href='../PHP/min_profil.php'><h3>$rad[navn]</h3></a>";
+  echo " <a href='min_profil.php'><h3>$rad[navn]</h3></a>";
 }
    echo "</div>";
 

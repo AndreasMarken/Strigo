@@ -18,7 +18,9 @@ if (isset($_POST['submit'])) {
   $fileExt = explode('.' , $fileName); /*Lager et array med filnavn og extention ved å splitte stringen $fileName ved punktum*/
   $fileActualExt = strtolower(end($fileExt));
 
-  $allowed = array('jpg');
+  // $_SESSION["fileExt"] = $fileActualExt;
+
+  $allowed = array('jpg', 'png');
 
 /*Sjekker om filen er godkjent*/
   if (in_array($fileActualExt, $allowed)) {
@@ -29,7 +31,7 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($fileTmpName, $fileDestination);
         $sql = "UPDATE profilbilde SET status=1 WHERE userID = '$id';";
         $result = mysqli_query($kobling, $sql);
-        header("Location: ../PHP/min_profil.php?uploadsuccess");
+        header("Location: ../pages/min_profil.php?uploadsuccess");
 
       } else{
         echo "Denne filen er for stor";

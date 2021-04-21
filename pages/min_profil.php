@@ -53,6 +53,7 @@ if (isset($_SESSION["brukerID"])) {
                   $status = $rad['status'];
             }
                 if($status == 1){
+                // echo "<img src='../uploads/profile".$id.".".$_SESSION["fileExt"]."'>";
                 echo "<img src='../uploads/profile".$id.".jpg'>";
               } else{
                 echo "<img src='../img/profile.png'>";

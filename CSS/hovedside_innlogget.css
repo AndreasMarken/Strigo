@@ -1,3 +1,73 @@
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+/* .classroom {
+  background-color: #69b9c2;
+  width: 99.2%;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: -10px;
+  display: flex;
+}
+
+.heading-secondary {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.dine-klasserom {
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+/* .minprofil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.minprofil img{
+  border: solid 1px black;
+  border-radius: 30px;
+  height: 50px;
+}
+
+.username {
+  margin-top: -20px;
+  color: white;
+} */
+
+.classList {
+  width: 60vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.classItem {
+  background-color: #69b9c2;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.heading-tertiary {
+  font-size: 30px;
+  color: white;
+}
+
 .oversiktsmeny {
   display: flex;
   flex-direction: row;
@@ -6,7 +76,9 @@
   align-items: center;
   width: 790px;
   margin: 0 auto;
+  margin-top: 20px;
   }
+
 
 .minprofil {
   display: flex;
@@ -53,7 +125,7 @@ h3{
   margin-top: 5px;
 }
 
-.små_bokser {
+/*.små_bokser {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,4 +160,4 @@ h3{
 
 .liten_boks_medtekst img {
   margin-top: 5px;
-}
+}  */

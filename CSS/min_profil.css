@@ -26,8 +26,7 @@
 
 .lowerContainer{
   display: flex;
-  flex-direction: row;
-  height: 300px;
+  flex-direction: column;
   background-color: #69b9c2;
 }
 
@@ -64,10 +63,10 @@ input[type=email]{
 }
 
 input[type=submit]{
-  height: 30px;
-  width: 70px;
   margin-left: 378px;
   margin-top: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 form {

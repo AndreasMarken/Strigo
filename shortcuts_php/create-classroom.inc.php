@@ -20,7 +20,7 @@ if (isset($_POST["create_classroom"])) {
     }
 
     if ($inUse == 0000000001){
-      header("location: ../pages/php_code_for_test.php?error=classcode-already-used");
+      header("location: ../pages/teacherloggedin.php?error=classcode-already-used");
       exit();
     }
 
@@ -41,11 +41,11 @@ if (isset($_POST["create_classroom"])) {
     $sql8 = "UPDATE schoolcode SET inUse = 1 WHERE school_code = '$classcode';";
     $resultat7 = $kobling->query($sql8);
 
-    header("location: ../pages/php_code_for_test.php?classroom-created");
+    header("location: ../pages/teacherloggedin.php?classroom-created");
     exit();
 
   } else {
-    header("location: ../pages/php_code_for_test.php?error=classcode-no-exist");
+    header("location: ../pages/teacherloggedin.php?error=classcode-no-exist");
     exit();
   }
 

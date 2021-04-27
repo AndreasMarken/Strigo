@@ -80,8 +80,36 @@ if (isset($_SESSION["brukerID"])) {
                 <input type="email" name="epost" value="<?php echo $epost; ?>"></br>
 
                 <input type="submit" name="lagre" value="LAGRE">
+                <br>
+                <?php
+                if(isset($_POST["slettID"])){
+
+                    $id_slett = $_POST["ID_bruker"];
+
+                    $sql_delete_photo = "DELETE FROM profilbilde WHERE userID=$id_slett";
+
+                      if ($kobling->query($sql_delete_photo) === TRUE) {
+
+                        $sql_delete_student = "DELETE FROM student WHERE brukerID=$id_slett";
+
+                          if ($kobling->query($sql_delete_student) === TRUE) {
+                            require_once '../shortcuts_php/logout.inc.php';
+                            header('Location: index.php');
+                          } else {
+                            echo "Error deleting photo: " . $kobling->error;
+                          }
+                        } else {
+                          echo "Error deleting student: " . $kobling->error;
+                        }
+                    }?>
+
+                   <form method="post">
+                     <input type="hidden" name="ID_bruker" value="<?php echo "$id"; ?>">
+                     <input type="submit" name="slettID" value="Slett Profil">
+                  </form>
               </form>
-            </div>
+
+            </div> <!-- End lowerContainer -->
           </div>
 
           <?php if(isset($_POST['lagre'])){
@@ -168,7 +196,7 @@ if (isset($_SESSION["brukerID"])) {
               <!-- navn, brukernavn, epost -->
               <div class="lowerContainer">
                 <form action="" method="POST">
-                  <label for="navn">NAVN:</label>
+                  <label for="navn">navn:</label>
                   <input type="text" name="navn" value="<?php echo $navn; ?>"></br>
 
                   <label for="brukernavn">BRUKERNAVN:</label>

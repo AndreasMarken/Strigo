@@ -173,7 +173,7 @@ function loginUser_teacher($kobling, $brukernavn, $pwd){
   $uidExists = uidExist_teacher($kobling, $brukernavn, $brukernavn);
 
   if ($uidExists === false) {
-    header("location: ../pages/teacherlogin.php?error=wronglogin");
+    header("location: ../pages/login.php?error=wronglogin");
     exit();
   }
 
@@ -181,7 +181,7 @@ function loginUser_teacher($kobling, $brukernavn, $pwd){
   $checkPwd = password_verify($pwd,$pwdHashed);
 
   if ($checkPwd === false) {
-    header("location: ../pages/teacherlogin.php?error=wronglogin");
+    header("location: ../pages/login.php?error=wronglogin");
     exit();
   }
   elseif ($checkPwd === true) {

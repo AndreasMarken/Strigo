@@ -2,7 +2,7 @@
 <div class="footer">
 <footer>
   <div>
-    <img src = "../img/copyright.png">
+    <img src = "../img/copyright.png" width="30px">
     <div>Est 2021</div>
   </div>
   <a href="mailto:mail@yoursite.com">Epost: strigo@app.no</a>

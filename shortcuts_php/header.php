@@ -12,21 +12,28 @@
             echo "    <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
             echo "  </ul>";
             echo "</div>";
+          } elseif (isset($_SESSION["TeacherID"])) {
+            echo "<div class='knapper_innlogget'>";
+            echo "  <ul>";
+            echo "    <li><a href='../pages/min_profil.php'>Min profil</a></li>";
+            echo "    <li><a href='../shortcuts_php/logout.inc.php'>Logg Ut</a></li>";
+            echo "  </ul>";
+            echo "</div>";
           }
       ?>
 </div>
 
 <!--Header når ikke logget inn-->
       <?php
-        if (!isset($_SESSION["brukerID"])) {
-            echo "<div class='knapper_ikke_innlogget'>";
-            echo "  <ul>";
-            echo "    <li><a href='index.php'>Index</a></li>";
-            echo "    <li><a href='index.php'>Praktisk info</a></li>";
-            echo "    <li><a href='index.php'>For skolene</a></li>";
-            echo "    <li><a href='../pages/login.php#studentlogin'>Logg inn</a></li>";
-            echo "  </ul>";
-            echo "</div>";
+      if (!isset($_SESSION["brukerID"]) && !isset($_SESSION["TeacherID"])) {
+          echo "<div class='knapper_ikke_innlogget'>";
+          echo "  <ul>";
+          echo "    <li><a href='index.php'>Index</a></li>";
+          echo "    <li><a href='index.php'>Praktisk info</a></li>";
+          echo "    <li><a href='index.php'>For skolene</a></li>";
+          echo "    <li><a href='../pages/login.php#studentlogin'>Logg inn</a></li>";
+          echo "  </ul>";
+          echo "</div>";
           }
       ?>
 
@@ -70,8 +77,10 @@ body {
 }
 
 .knapper_ikke_innlogget{
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 

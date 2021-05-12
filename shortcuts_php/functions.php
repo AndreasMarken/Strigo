@@ -128,7 +128,7 @@ function uidExist_teacher($kobling, $brukernavn, $email) {
   $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";
   $stmt = mysqli_stmt_init($kobling);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../pages/teacherregister.php?error=stmtfailed");
+    header("location: ../pages/registrer.php?error=stmtfailed");
     exit();
   }
 
@@ -147,26 +147,6 @@ else {
 
 mysqli_stmt_close($stmt);
 
-}
-
-function createUser_teacher($kobling, $brukernavn, $email, $navn, $passord) {
-  $sql2 = "INSERT INTO teacher (username, email, name, password) VALUES (?, ?, ?, ?);";
-  $stmt = mysqli_stmt_init($kobling);
-  if (!mysqli_stmt_prepare($stmt, $sql2)) {
-    header("location: ../pages/teacherregister.php?error=stmtfailed");
-    exit();
-  }
-
-  $hashedPwd = password_hash($passord, PASSWORD_DEFAULT);
-
- mysqli_stmt_bind_param($stmt, "ssss", $brukernavn, $email, $navn, $hashedPwd);
- mysqli_stmt_execute($stmt);
- mysqli_stmt_close($stmt);
- $sql3 = "INSERT INTO teacher_profilepicture (teacher_id, status) VALUES (LAST_INSERT_ID(),0);";
- $resultat = $kobling->query($sql3);
-
- header("location: ../pages/teacherregister.php?error=none");
- exit();
 }
 
 function loginUser_teacher($kobling, $brukernavn, $pwd){
@@ -193,6 +173,24 @@ function loginUser_teacher($kobling, $brukernavn, $pwd){
   }
 }
 
+function createUser_teacher($kobling, $brukernavn, $email, $navn, $passord) {
+  $sql2 = "INSERT INTO teacher (username, email, name, password) VALUES (?, ?, ?, ?);";
+  $stmt = mysqli_stmt_init($kobling);
+  if (!mysqli_stmt_prepare($stmt, $sql2)) {
+    header("location: ../pages/teacherregister.php?error=stmtfailed");
+    exit();
+  }
+
+  $hashedPwd = password_hash($passord, PASSWORD_DEFAULT);
+
+ mysqli_stmt_bind_param($stmt, "ssss", $brukernavn, $email, $navn, $hashedPwd);
+ mysqli_stmt_execute($stmt);
+ mysqli_stmt_close($stmt);
+ $sql3 = "INSERT INTO teacher_profilepicture (teacher_id, status) VALUES (LAST_INSERT_ID(),0);";
+ $resultat = $kobling->query($sql3);
+ loginUser_teacher($kobling, $brukernavn, $passord);
+ exit();
+}
 
 function checkKeys($kobling, $randStr) {
   $sql = "SELECT * FROM SchoolCode";
@@ -228,7 +226,18 @@ function checkKeys($kobling, $randStr) {
 
     return $randStr;
   }
-
+ 
+  function emptyInputOption($StudentTeacher) {
+    $resultat;
+    if (empty($StudentTeacher)) {
+          $resultat = true;
+       }
+       else {
+         $resultat = false;
+       }
+       return $resultat;
+  }
+  
 
 
 

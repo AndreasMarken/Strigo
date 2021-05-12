@@ -150,29 +150,29 @@ require_once '../shortcuts_php/kobling.php'; ?>
 //         echo "</div>";
 //           echo "<a href='htmlogcsskurs.php'><h4>HTML og CSS</h4></a>";
 //       echo "</div>";
-//
+
 //       echo "<div class='liten_boks_medtekst'>";
 //         echo "<a href='javakurs.php'><img src='../img/js.png' width='150px'></a>";
 //         echo "<a href='javakurs.php'><h4>Javascript</h4></a>";
 //       echo "</div>";
-//
+
 //       echo "<div class='liten_boks_medtekst'>";
 //         echo "<a href='phpogmysqlkurs.php'><img src='../img/php-mysql.png' width='200px'></a>";
 //         echo "<a href='phpogmysqlkurs.php'><h4>PHP og Mysql</h4></a>";
 //       echo "</div>";
 //     echo "</div>";
-//
+
 //   echo "<div class='andre_rad'>";
 //     echo "<div class='liten_boks_medtekst'>";
 //       echo "<a href=''><img src='../img/spørsmålstegn.png' width='100px'></a>";
 //       echo "<a href=''><h4>Quiz og oppgaver</h4></a>";
 //     echo "</div>";
-//
+
 //     echo "<div class='liten_boks_medtekst'>";
 //       echo "<a href=''><img src='../img/forstørrelsesglass.png' width='100px'></a>";
 //       echo "<a href=''><h4>Oppslagsverk</h4></a>";
 //     echo "</div>";
-//
+
 //     echo "<div class='liten_boks_medtekst'>";
 //       echo "<a href=''><img src='../img/x.png' width='100px'></a>";
 //       echo "<a href=''><h4>Feilsøker</h4></a>";
@@ -185,7 +185,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
 }
 
 else {
- header("location:index.php");
+ header("location: login.php");
  exit();
 }?>
 

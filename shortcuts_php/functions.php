@@ -69,37 +69,6 @@ mysqli_stmt_close($stmt);
 
 }
 
-function createUser($kobling, $navn, $email, $brukernavn, $passord) {
-  $sql2 = "INSERT INTO student (navn, email, brukernavn, passord) VALUES (?, ?, ?, ?);";
-  $stmt = mysqli_stmt_init($kobling);
-  if (!mysqli_stmt_prepare($stmt, $sql2)) {
-    header("location: ../pages/registrer.php?error=stmtfailed");
-    exit();
-  }
-
-  $hashedPwd = password_hash($passord, PASSWORD_DEFAULT);
-
- mysqli_stmt_bind_param($stmt, "ssss", $navn, $email, $brukernavn, $hashedPwd);
- mysqli_stmt_execute($stmt);
- mysqli_stmt_close($stmt);
- $sql3 = "INSERT INTO profilbilde (userID, status) VALUES (LAST_INSERT_ID(),0);";
- $resultat = $kobling->query($sql3);
-
- header("location: ../pages/registrer.php?error=none");
- exit();
-}
-
-function emptyInputLogin($brukernavn, $pwd) {
-  $resultat;
-  if (empty($brukernavn) || empty($pwd)) {
-        $resultat = true;
-     }
-     else {
-       $resultat = false;
-     }
-     return $resultat;
-}
-
 function loginUser($kobling, $brukernavn, $pwd){
   $uidExists = uidExist($kobling, $brukernavn, $brukernavn);
 
@@ -123,6 +92,37 @@ function loginUser($kobling, $brukernavn, $pwd){
     exit();
   }
 }
+
+function createUser($kobling, $navn, $email, $brukernavn, $passord) {
+  $sql2 = "INSERT INTO student (navn, email, brukernavn, passord) VALUES (?, ?, ?, ?);";
+  $stmt = mysqli_stmt_init($kobling);
+  if (!mysqli_stmt_prepare($stmt, $sql2)) {
+    header("location: ../pages/registrer.php?error=stmtfailed");
+    exit();
+  }
+
+  $hashedPwd = password_hash($passord, PASSWORD_DEFAULT);
+
+ mysqli_stmt_bind_param($stmt, "ssss", $navn, $email, $brukernavn, $hashedPwd);
+ mysqli_stmt_execute($stmt);
+ mysqli_stmt_close($stmt);
+ $sql3 = "INSERT INTO profilbilde (userID, status) VALUES (LAST_INSERT_ID(),0);";
+ $resultat = $kobling->query($sql3);
+ loginUser($kobling, $brukernavn, $passord);
+ exit();
+}
+
+function emptyInputLogin($brukernavn, $pwd) {
+  $resultat;
+  if (empty($brukernavn) || empty($pwd)) {
+        $resultat = true;
+     }
+     else {
+       $resultat = false;
+     }
+     return $resultat;
+}
+
 
 function uidExist_teacher($kobling, $brukernavn, $email) {
   $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";

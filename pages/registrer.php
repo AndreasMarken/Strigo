@@ -63,9 +63,6 @@ if (isset($_GET["error"])) {
   else if ($_GET["error"] == "stmtfailed") {
     echo "<p>Noe gikk galt, prøv på nytt.</p>";
   }
-  else if ($_GET["error"] == "none") {
-    echo "<p>Du har nå regisrert deg.</p>";
-  }
 }
  ?>
 

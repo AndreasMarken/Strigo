@@ -85,7 +85,7 @@ if (isset($_GET["error"])) {
    <div class="logginn-registrer">
      <ul>
        <li ><a class="current" href="login.php#teacherlogin">Logg inn</a></li>
-       <li><a href="teacherregister.php">Registrer</a></li>
+       <li><a href="registrer.php">Registrer</a></li>
      </ul>
    </div>
 

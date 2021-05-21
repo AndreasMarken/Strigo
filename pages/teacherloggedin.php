@@ -81,6 +81,8 @@ require_once '../shortcuts_php/kobling.php'; ?>
     //      echo "<h3>Antall<br> Lekser: "."$rad[antall_lekser]</h3> ";
     // }
 
+    echo "<h3>Antall<br> Lekser: 0</h3> ";
+
     echo "</div>";
 
     ?>
@@ -88,8 +90,6 @@ require_once '../shortcuts_php/kobling.php'; ?>
   </div>
 
     </div>
-
-    <a href="php_code_for_test.php">Php kode</a> <br>
 
     <div class="classList">
 

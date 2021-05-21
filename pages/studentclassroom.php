@@ -6,7 +6,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
     <title>Strigo</title>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/hovedside_innlogget.css">
+    <link rel="stylesheet" href="../CSS/studentclassroom.css">
 
   </head>
 
@@ -16,12 +16,6 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
     require_once '../shortcuts_php/togglemenu.php';
     ?>
-
-    <!-- <div class="classroom">
-      <div class="dine-klasserom">
-        <h2 class="heading-secondary">Dine klasserom</h2>
-      </div>
-    </div> -->
 
     <div class="oversiktsmeny">
 <?php
@@ -94,53 +88,65 @@ require_once '../shortcuts_php/kobling.php'; ?>
 
     ?>
 
-  </div>
-
-    </div>
-
-    <div class="classList">
-
-    <?php
-    $userId = $_SESSION["brukerID"];
-    $sql_1 = "SELECT * FROM participant WHERE student_id = $userId;";
-    $result_1 = $kobling->query($sql_1);
-
-    while ($row1 = $result_1->fetch_assoc()) {
-           $classroomId = $row1['classroom_id'];
-
-           $sql_2 = "SELECT * FROM classroom WHERE idClassroom = $classroomId;";
-           $result_2 = $kobling->query($sql_2);
-
-           while ($row2 = $result_2->fetch_assoc()) {
-             $classroomName = $row2['className'];
-             $subjectId = $row2['subjectId'];
-
-             $sql_3 = "SELECT * FROM subject WHERE idSubject = $subjectId;";
-             $result_3 = $kobling->query($sql_3);
-
-             while ($row3 = $result_3->fetch_assoc()) {
-               $subject = $row3['subjectName'];
-             }
-            }
-
-              echo "<a href='studentclassroom.php?ID=$classroomId' class='classItem'>";
-                echo "<h3 class='heading-tertiary'>".$subject." ".$classroomName."</h3>";
-              echo "</a>";
-
-}
-?>
-    </div>
-
-<div class="add_classroom">
-  <form action="../shortcuts_php/join_classroom.inc.php" method="post">
-    <input type="text" name="classCode" placeholder="ClassCode">
-    <Button type="submit" name="join_classroom">Bli med i et klasserom</button>
-  </form>
 </div>
 
-
-
 <?php
+$classroomId = $_GET[ID];
+$sql_1 = "SELECT * FROM classroom WHERE idClassroom = $classroomId;";
+$resultat_1 = $kobling->query($sql_1);
+
+if (!$resultat_1) {
+die("Noe gikk galt med spørringen: " . $kobling->error);
+}
+
+while ($rad = $resultat_1->fetch_assoc()) {
+  $subjectId = $rad[subjectId];
+}
+
+if ($subjectId == 1) {
+  echo "<div class='små_bokser'>";
+    echo "<div class='øverste_rad'>";
+      echo "<div class='liten_boks_medtekst'>";
+        echo "<div class='bildene'>";
+          echo "<a href='htmlogcsskurs.php'><img src='../img/html.png' width='100px'></a>";
+          echo "<a href='htmlogcsskurs.php'><img src='../img/css.png' width='100px'></a>";
+        echo "</div>";
+          echo "<a href='htmlogcsskurs.php'><h4>HTML og CSS</h4></a>";
+      echo "</div>";
+
+      echo "<div class='liten_boks_medtekst'>";
+        echo "<a href='javakurs.php'><img src='../img/js.png' width='150px'></a>";
+        echo "<a href='javakurs.php'><h4>Javascript</h4></a>";
+      echo "</div>";
+
+      echo "<div class='liten_boks_medtekst'>";
+        echo "<a href='phpogmysqlkurs.php'><img src='../img/php-mysql.png' width='200px'></a>";
+        echo "<a href='phpogmysqlkurs.php'><h4>PHP og Mysql</h4></a>";
+      echo "</div>";
+    echo "</div>";
+
+  echo "<div class='andre_rad'>";
+    echo "<div class='liten_boks_medtekst'>";
+      echo "<a href=''><img src='../img/spørsmålstegn.png' width='100px'></a>";
+      echo "<a href=''><h4>Quiz og oppgaver</h4></a>";
+    echo "</div>";
+
+    echo "<div class='liten_boks_medtekst'>";
+      echo "<a href=''><img src='../img/forstørrelsesglass.png' width='100px'></a>";
+      echo "<a href=''><h4>Oppslagsverk</h4></a>";
+    echo "</div>";
+
+    echo "<div class='liten_boks_medtekst'>";
+      echo "<a href=''><img src='../img/x.png' width='100px'></a>";
+      echo "<a href=''><h4>Feilsøker</h4></a>";
+    echo "</div>";
+  echo "</div>";
+echo "</div>";
+} else {
+  echo "Faget ditt finnes ikke for nettsiden enda";
+}
+
+
 
  require_once '../shortcuts_php/footer.php';
 

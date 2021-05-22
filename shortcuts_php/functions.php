@@ -126,18 +126,50 @@ function loginUser($kobling, $brukernavn, $pwd){
   $pwdHashed = $uidExists["passord"];
   $checkPwd = password_verify($pwd,$pwdHashed);
 
+
   if ($checkPwd === false) {
     header("location: ../pages/login.php?error=wronglogin");
     exit();
   }
   elseif ($checkPwd === true) {
     session_start();
+    if($uidExists["brukerID"]){
     $_SESSION["brukerID"] = $uidExists["brukerID"];
     $_SESSION["brukernavn"] = $uidExists["brukernavn"];
     header("location: ../pages/hovedside_innlogget.php");
     exit();
+    }elseif ($uidExists["idTeacher"]){
+      $_SESSION["TeacherID"] = $uidExists["idTeacher"];
+      $_SESSION["brukernavn"] = $uidExists["username"];
+      header("location: ../pages/teacherloggedin.php");
+      exit();  
+    }
   }
 }
+
+// function loginUser_teacher($kobling, $brukernavn, $pwd){
+//   $uidExists = uidExist_teacher($kobling, $brukernavn, $brukernavn);
+
+//   if ($uidExists === false) {
+//     header("location: ../pages/login.php?error=wronglogin");
+//     exit();
+//   }
+
+//   $pwdHashed = $uidExists["password"];
+//   $checkPwd = password_verify($pwd,$pwdHashed);
+
+//   if ($checkPwd === false) {
+//     header("location: ../pages/login.php?error=wronglogin");
+//     exit();
+//   }
+//   elseif ($checkPwd === true) {
+//     session_start();
+//     $_SESSION["TeacherID"] = $uidExists["idTeacher"];
+//     $_SESSION["brukernavn"] = $uidExists["username"];
+//     header("location: ../pages/teacherloggedin.php");
+//     exit();
+//   }
+// }
 
 function createUser($kobling, $navn, $email, $brukernavn, $passord) {
   $sql2 = "INSERT INTO student (navn, email, brukernavn, passord) VALUES (?, ?, ?, ?);";
@@ -167,30 +199,6 @@ function emptyInputLogin($brukernavn, $pwd) {
        $resultat = false;
      }
      return $resultat;
-}
-
-function loginUser_teacher($kobling, $brukernavn, $pwd){
-  $uidExists = uidExist_teacher($kobling, $brukernavn, $brukernavn);
-
-  if ($uidExists === false) {
-    header("location: ../pages/login.php?error=wronglogin");
-    exit();
-  }
-
-  $pwdHashed = $uidExists["password"];
-  $checkPwd = password_verify($pwd,$pwdHashed);
-
-  if ($checkPwd === false) {
-    header("location: ../pages/login.php?error=wronglogin");
-    exit();
-  }
-  elseif ($checkPwd === true) {
-    session_start();
-    $_SESSION["TeacherID"] = $uidExists["idTeacher"];
-    $_SESSION["brukernavn"] = $uidExists["username"];
-    header("location: ../pages/teacherloggedin.php");
-    exit();
-  }
 }
 
 function createUser_teacher($kobling, $brukernavn, $email, $navn, $passord) {

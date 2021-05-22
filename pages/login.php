@@ -44,9 +44,9 @@
               <div class="littlebox">
                 <div class="signin-register">
                   <button type="submit" name="submit" class="btn submit-btn">Sign in</button>
-                  <a href="" class="btn btn-secondary">New account</a>
+                  <a href="registrer.php" class="btn btn-secondary">New account</a>
                 </div>
-                <a href="forgottenPwd.php" class="frgpwd">Forgot your password?</a>
+                <a href="404.php" class="frgpwd">Forgot your password?</a>
               </div>
         
             </form>

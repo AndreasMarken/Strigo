@@ -1,5 +1,3 @@
-<?php require_once '../shortcuts_php/logincheck.php'; ?>
-
 <!doctype html>
 <html lang="nb">
   <head>
@@ -20,12 +18,14 @@
 <div class="mainContainer">
 
   <div class="signup-form">
-    <h2>Elev registrering</h2>
-    <ul>
-      <li ><a class="current" href="registrer.php">Registrer deg som elev</a></li>
-      <li><a href="teacherregister.php">Registrer deg som lærer</a></li>
-  </ul>
+    <h2>Registrering</h2>
     <form action="../shortcuts_php/signup.inc.php" method="post">
+
+      <h3>Hva registrerer du deg som?</h3>
+      <label for="StudentTeacher">Elev:    </label>
+      <input type="radio" name="StudentTeacher" value="student"><br>
+      <label for="StudentTeacher">Lærer:</label>
+      <input type="radio" name="StudentTeacher" value="teacher">
       <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn">
       <h3>Email:</h3><input type="text" name="email" placeholder="Email">
       <h3>Brukernavn:</h3><input type="text" name="uid" placeholder="Brukernavn">

@@ -105,8 +105,8 @@ require_once '../shortcuts_php/kobling.php'; ?>
     }
 
     while ($rad = $resultat_1->fetch_assoc()) {
-      $classroomId = $rad[idClassroom];
-      $classname = $rad[className];
+      $classroomId = $rad["idClassroom"];
+      $classname = $rad["className"];
 
       $subjectId = $rad['subjectId'];
 
@@ -118,7 +118,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
       }
 
       while ($rad_2 = $resultat_2->fetch_assoc()) {
-        $subjectName = $rad_2[subjectName];
+        $subjectName = $rad_2["subjectName"];
       }
 
       echo "<a href=\"classroom.php?ID=$classroomId\" class='classItem'>";
@@ -142,7 +142,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
      <input type="text" name="classCode" placeholder="ClassCode">
      <select name="subject">
    <?php  while ($rad = $resultat3->fetch_assoc()) { ?>
-   <option name="<?php echo $rad[subjectName]; ?>"><?php echo $rad[subjectName]; ?></option>
+   <option name="<?php echo $rad["subjectName"]; ?>"><?php echo $rad["subjectName"]; ?></option>
    <?php } ?>
    </select>
 
@@ -170,7 +170,7 @@ require_once '../shortcuts_php/kobling.php'; ?>
    $sql5 = "SELECT * FROM schoolcode WHERE teacher_id = $teacherID AND inUse = 0";
    $resultat5 = $kobling->query($sql5);
       while ($rad = $resultat5->fetch_assoc()) {
-        $school_code = $rad[school_code];
+        $school_code = $rad["school_code"];
         echo $school_code;
         echo "<br>";
       }

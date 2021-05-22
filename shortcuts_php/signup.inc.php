@@ -2,6 +2,8 @@
 
 if (isset($_POST["submit"])) {
 
+  $StudentTeacher = $_POST["StudentTeacher"];
+
   $navn = $_POST["navn"];
   $email = $_POST["email"];
   $brukernavn = $_POST["uid"];
@@ -28,18 +30,29 @@ if (isset($_POST["submit"])) {
     exit();
   }
   if (uidExist($kobling, $brukernavn, $email) !== false) {
-      header("location: ../pages/registrer.php?error=usernametaken");
-      exit();
+    header("location: ../pages/registrer.php?error=usernametaken");
+    exit();
+  }
+  // if (uidExist_teacher($kobling, $brukernavn, $email) !== false) {
+  //     header("location: ../pages/registrer.php?error=usernametaken");
+  //     exit();
+  //   }
+  if (emptyInputOption($StudentTeacher) !== false) {
+    header("location: ../pages/registrer.php?error=emptyinput");
+    exit();
+  }
+
+  if($StudentTeacher == 'student'){
+      createUser($kobling, $navn, $email, $brukernavn, $passord);
     }
 
-
-  createUser($kobling, $navn, $email, $brukernavn, $passord);
-
-}
-else {
-  header("location: ../pages/registrer.php");
-  exit();
-}
+  if($StudentTeacher == 'teacher'){
+     createUser_teacher($kobling, $brukernavn, $email, $navn, $passord);
+    }
+  } else {
+    header("location: ../pages/registrer.php");
+    exit();
+  }
 
 
  ?>

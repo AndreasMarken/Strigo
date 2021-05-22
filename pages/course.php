@@ -11,12 +11,10 @@ require_once '../shortcuts_php/kobling.php'; ?>
   </head>
 
   <?php require_once '../shortcuts_php/header.php'; ?>
-<?php  if (isset($_SESSION["brukerID"])) { ?>
-<?php
-  if (isset($_SESSION["brukerID"])) {
-    require_once '../shortcuts_php/togglemenu.php';
-  }?>
-
+<?php  
+if (isset($_SESSION["brukerID"])) { 
+  require_once '../shortcuts_php/togglemenu.php';
+?>
 <div class="mainContainer">
   <h1>Kapittel 3 Sammensetting</h1>
 <div class="navigasjonsbar">

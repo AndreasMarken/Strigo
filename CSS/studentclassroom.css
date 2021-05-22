@@ -1,0 +1,103 @@
+a:visited,
+a:link {
+  text-decoration: none;
+}
+
+.heading-tertiary {
+  font-size: 30px;
+  color: white;
+}
+
+.oversiktsmeny {
+  display: flex;
+  flex-direction: row;
+  background-color: #3F7075;
+  justify-content: space-around;
+  align-items: center;
+  width: 790px;
+  margin: 0 auto;
+  margin-top: 20px;
+  }
+
+
+.minprofil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+
+.minprofil img{
+  border: solid 1px black;
+  border-radius: 30px;
+  height: 60px;
+}
+
+.fullførtkapitler {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  border-left: 1px solid white;
+  padding-left: 70px;
+  margin-left: -39px;
+}
+
+.fullførtoppgaver {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  border-left: 1px solid white;
+  padding-left: 50px;
+  margin-left: -39px;
+}
+
+h3{
+  color: white;
+}
+
+.minprofil a {
+  text-decoration: none;
+}
+
+.minprofil h3{
+  margin-top: 5px;
+}
+
+.små_bokser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.små_bokser a {
+  text-decoration: none;
+  color: white;
+}
+
+.øverste_rad {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.andre_rad {
+  display: flex;
+  flex-direction: row;
+}
+
+.liten_boks_medtekst {
+  display: flex;
+  flex-direction: column;
+  background-color: #69b9c2;
+  margin: 10px;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
+.liten_boks_medtekst img {
+  margin-top: 5px;
+}

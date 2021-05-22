@@ -19,6 +19,11 @@ if (isset($_POST["join_classroom"])) {
     $sql2 = "SELECT * FROM classroom WHERE schoolCodeId = $schoolcodeId";
     $result2 = $kobling->query($sql2);
 
+    // if (!$result2) {
+    //   header("location:../pages/hovedside_innlogget.php?klasserommet-");
+    //   exit();
+    // }
+
     while ($row2 = $result2->fetch_assoc()) {
       $numberofstudents = $row2[studentCount];
       $classroomID = $row2[idClassroom];
@@ -26,6 +31,7 @@ if (isset($_POST["join_classroom"])) {
 
     $sql5 = "SELECT * FROM participant WHERE classroom_id = $classroomID AND student_id = $id";
     $result5 = $kobling->query($sql5);
+
 
     if ($numberofstudents < 30 && !$result5) {
       $sql3 = "INSERT INTO participant (student_id, classroom_id) VALUES ($id, $classroomID)";

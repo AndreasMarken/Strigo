@@ -1,0 +1,381 @@
+:root {
+    --background-color: #FFFFFF;
+    --primary-orange:#F5B78A;
+    --primary-green: #455A64;
+  
+    --primary-text: #263238;
+    --light-orange-text: #EBAE3D;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    
+    height: 10rem;
+    width: 100%;
+  }
+  
+  .navigation__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .navigation__item {
+    padding: 2rem;
+    margin-right: 3rem;
+  
+    text-decoration: none;
+    list-style: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+  }
+  
+  .navigation__link,
+  .navigation__link:link,
+  .navigation__link:visited {
+    text-decoration: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--primary-text);
+  }
+  
+  .login {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .login__list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .login__item {
+    padding: 1rem;
+    margin-right: 2rem;
+  
+    text-decoration: none;
+    list-style: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+  }
+  
+  .login__item:last-child {
+    margin-right: 3rem;
+  }
+  
+  .login__link,
+  .login__link:link,
+  .login__link:visited {
+    text-decoration: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--primary-text);
+  }
+  
+  .orange {
+    color: var(--light-orange-text) !important; 
+  }
+  
+  .active {
+    padding: 1rem 2rem;
+    border: 2px solid #000000;
+    border-radius: 10px;
+  }
+  
+  .row {
+    max-width: 114rem;
+    margin: 0 auto; 
+  }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; 
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; 
+  }
+  
+  .row [class^="col-"] {
+    float: left; 
+  }
+  
+  .row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem; 
+  }
+  
+  .row .col-1-of-3 {
+    width: calc( (100% - 2 * 6rem) / 3); 
+}
+  
+  .heading-primary {
+    font-size: 7rem;
+    font-weight: 400;
+    color: var(--primary-text);
+  }
+  
+  .paragraph-main {
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+  }
+  
+  .u-margin-top {
+    margin-top: 3rem;
+  }
+  
+  .btn-main {
+    margin-top: 2rem;
+    text-decoration: none;
+    font-size: 3.5rem;
+    width: 29rem;
+    height: 7rem;
+    padding: 1rem 2rem;
+    background: var(--primary-green);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: #FFFFFF;
+  }
+  
+  .card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 40rem; 
+}
+
+.card__side {
+    height: 40rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); 
+    border-radius: 30px;
+}
+
+.card__side--front-1 {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.card__side--front-1 {
+    background-color: #E0E0E0; 
+    color: #455A64;
+}
+
+.card__side--front-2 {
+    background-color: #F5B78A; 
+    color: #FFFFFF;
+}
+
+.card__side--front-3 {
+    background-color: #455A64;
+    color: #F5B78A;
+}
+
+.card__side--back {
+    transform: rotateY(180deg); 
+}
+
+.card__side--back-1 {
+    background-color: #E0E0E0; 
+    color: #455A64;
+}
+
+.card__side--back-2 {
+    background-color: #F5B78A;
+    color: #FFFFFF;
+}
+
+.card__side--back-3 {
+    background-color: #455A64;
+    color: #F5B78A;
+}
+
+.card:hover .card__side--front {
+    transform: rotateY(-180deg); 
+}
+ 
+.card:hover .card__side--back {
+    transform: rotateY(0); 
+}
+
+.card__heading {
+    margin-top: 2rem;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    width: 100%; 
+}
+
+.card__heading-span {
+    padding: .4rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; 
+}
+
+.card__heading-span--1 {
+    color: #455A64;
+    border-bottom: 2px solid #455A64;
+}
+
+.card__heading-span--2 {
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.card__heading-span--3 {
+    color: #F5B78A;
+    border-bottom: 2px solid #F5B78A;
+}
+
+.card__details {
+    padding: 3rem; 
+}
+
+.card__details ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.card__details ul li {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem; 
+}
+
+.card__details--1 ul li:not(:last-child) {
+    border-bottom: 1px solid #455A64; 
+}
+
+.card__details--2 ul li:not(:last-child) {
+    border-bottom: 1px solid #FFFFFF; 
+}
+
+.card__details--3 ul li:not(:last-child) {
+    border-bottom: 1px solid #F5B78A; 
+}
+
+.card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; 
+}
+
+.card__price-box {
+    text-align: center;
+    margin-bottom: 8rem; 
+}
+
+.card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; 
+}
+
+.card__price-value {
+    font-size: 6rem;
+    font-weight: 100; 
+}
+
+.u-center-text {
+    text-align: center !important;
+}
+   
+.u-margin-top-huge {
+    margin-top: 10rem !important; 
+}
+
+.u-margin-top-medium {
+    margin-top: 5rem !important; 
+}
+
+.u-margin-bottom-medium {
+    margin-bottom: 5rem !important; 
+}
+   
+.card__btn {
+    width: 140.86px;
+    height: 34px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.card__btn--1 {
+    background-color: #263238;
+    color: #E0E0E0;
+}
+
+.card__price-value--front {
+    font-size: 4rem;
+    font-weight: 100; 
+}
+
+.btn-main--1 {
+    background-color: #455A64;
+    color: #E0E0E0;
+}
+
+.btn-main--2 {
+    background-color: #FFFFFF;
+    color: #F5B78A;
+}
+
+.btn-main--3 {
+    background-color: #F5B78A;
+    color: #455A64;
+}
+
+.btm-left {
+    position: absolute;
+    left: 0;
+    bottom: -30%;
+    z-index: -1;
+}
+
+.mid-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+}

@@ -61,13 +61,59 @@ if ($row = mysqli_fetch_assoc($resultData)) {
   return $row;
 }
 else {
+  // $result = false;
+  // return $result;
+  $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";
+  $stmt = mysqli_stmt_init($kobling);
+  if (!mysqli_stmt_prepare($stmt, $sql)) {
+    header("location: ../pages/registrer.php?error=stmtfailed");
+    exit();
+  }
+
+ mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
+ mysqli_stmt_execute($stmt);
+
+ $resultData = mysqli_stmt_get_result($stmt);
+
+if ($row = mysqli_fetch_assoc($resultData)) {
+  return $row;
+}
+else {
   $result = false;
   return $result;
 }
 
 mysqli_stmt_close($stmt);
+}
+
+mysqli_stmt_close($stmt);
 
 }
+
+// function uidExist_teacher($kobling, $brukernavn, $email) {
+//   $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";
+//   $stmt = mysqli_stmt_init($kobling);
+//   if (!mysqli_stmt_prepare($stmt, $sql)) {
+//     header("location: ../pages/registrer.php?error=stmtfailed");
+//     exit();
+//   }
+
+//  mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
+//  mysqli_stmt_execute($stmt);
+
+//  $resultData = mysqli_stmt_get_result($stmt);
+
+// if ($row = mysqli_fetch_assoc($resultData)) {
+//   return $row;
+// }
+// else {
+//   $result = false;
+//   return $result;
+// }
+
+// mysqli_stmt_close($stmt);
+
+// }
 
 function loginUser($kobling, $brukernavn, $pwd){
   $uidExists = uidExist($kobling, $brukernavn, $brukernavn);
@@ -121,32 +167,6 @@ function emptyInputLogin($brukernavn, $pwd) {
        $resultat = false;
      }
      return $resultat;
-}
-
-
-function uidExist_teacher($kobling, $brukernavn, $email) {
-  $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";
-  $stmt = mysqli_stmt_init($kobling);
-  if (!mysqli_stmt_prepare($stmt, $sql)) {
-    header("location: ../pages/registrer.php?error=stmtfailed");
-    exit();
-  }
-
- mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
- mysqli_stmt_execute($stmt);
-
- $resultData = mysqli_stmt_get_result($stmt);
-
-if ($row = mysqli_fetch_assoc($resultData)) {
-  return $row;
-}
-else {
-  $result = false;
-  return $result;
-}
-
-mysqli_stmt_close($stmt);
-
 }
 
 function loginUser_teacher($kobling, $brukernavn, $pwd){

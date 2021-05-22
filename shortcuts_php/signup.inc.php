@@ -29,10 +29,14 @@ if (isset($_POST["submit"])) {
     header("location: ../pages/registrer.php?error=passwordsdontmatch");
     exit();
   }
-  if (uidExist_teacher($kobling, $brukernavn, $email) !== false) {
-      header("location: ../pages/registrer.php?error=usernametaken");
-      exit();
-    }
+  if (uidExist($kobling, $brukernavn, $email) !== false) {
+    header("location: ../pages/registrer.php?error=usernametaken");
+    exit();
+  }
+  // if (uidExist_teacher($kobling, $brukernavn, $email) !== false) {
+  //     header("location: ../pages/registrer.php?error=usernametaken");
+  //     exit();
+  //   }
   if (emptyInputOption($StudentTeacher) !== false) {
     header("location: ../pages/registrer.php?error=emptyinput");
     exit();

@@ -3,18 +3,24 @@
 <!doctype html>
 <html lang="nb">
   <head>
-    <title>Strigo</title>
+    <title>Reekap</title>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="">
+
+    <style>
+      body {
+        background-image: url('../img/Min profil.png');
+        background-size: cover;
+      }
+    </style>
 
   </head>
 
   <body>
 
-<h1> 404</h1>
 
-<h2>Kunne ikke finne det du lette etter</h2>
+
   </body>
 
 </html>

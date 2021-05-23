@@ -141,5 +141,24 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M133 27.7445C159.214 33.4008 185.805 31.3152 209.71 47.0806C235.808 64.2915 259.712 88.0391 275.206 121.528C292.046 157.926 306.841 201.123 300.502 243.318C294.234 285.042 260.709 305.595 242.382 340.032C221.754 378.796 220.618 449.22 186.181 458.142C150.494 467.388 129.782 399.326 97.0898 377.675C71.8882 360.985 37.0271 374.787 17.9613 346.736C-1.14334 318.628 -1.30388 274.58 1.02052 236.33C3.05258 202.892 24.6618 178.821 30.1528 146.118C37.7478 100.886 13.0229 40.1212 38.9828 10.2421C63.6845 -18.1889 101.112 20.8641 133 27.7445Z" fill="#F5B78A"/>
 </svg>
 
+
+<div class="popup" id="popup">
+    <div class="popup__content">
+        <div class="popup__left">
+            <img src="../img/reekap-logo.png" alt="" class="popup__img">
+        </div>
+        <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="">Reekap</h2>
+            <h3 class="">Important &ndash; This is not yet done</h3>
+            <p class="popup__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis facere consectetur dignissimos, adipisci cupiditate quas dolorum temporibus quibusdam veritatis nihil, facilis doloribus ipsa unde quis assumenda rerum eius blanditiis amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aspernatur neque natus amet velit sunt sed eos recusandae. Debitis dignissimos culpa ducimus nihil neque quia laborum, commodi aut optio cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae minus ad quisquam quibusdam corrupti quae atque, facilis dolor nemo! Repudiandae modi reiciendis, placeat repellat perferendis voluptatibus ab ea facere necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias labore illum autem sequi. Error nesciunt incidunt reprehenderit culpa earum, velit nulla illum quibusdam non placeat, minima, deserunt ab est odit.
+            </p>
+            <a href="#" class="btn-main">Order now</a>
+        </div>
+    </div>
+ </div>
+
+
   </body>
 </html>

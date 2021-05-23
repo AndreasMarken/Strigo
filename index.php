@@ -19,6 +19,11 @@
         <li class="navigation__item"><a href="pages/product.php" class="navigation__link">Our product</a></li>
         <li class="navigation__item"><a href="pages/pricing.php" class="navigation__link">Pricing</a></li>
         <li class="navigation__item"><a href="pages/contact.php" class="navigation__link">Contact</a></li>
+        <?php if(isset($_SESSION["brukerID"])) {?>
+          <li class="navigation__item"><a href="pages/hovedside_innlogget.php" class="navigation__link">Hjem</a></li>
+        <?php } elseif (isset($_SESSION["TeacherID"])){?>
+          <li class="navigation__item"><a href="pages/teacherloggedin.php" class="navigation__link">Hjem</a></li>
+          <?php }?>
       </ul>
     </div>
 
@@ -41,7 +46,7 @@
         <h1 class="heading-primary">Learn <span class="heading-primary orange">smarter</span> with <br>Reekap!</h1> <br>
         <p class="paragraph-main u-margin-top">We make learning faster,<br> easier and funnier for you!</p> <br>
       
-        <a href="#" class="btn-main">Start learing!</a>
+        <a href="#" class="btn-main btn--animated btn">Start learing!</a>
       </div>
     </div>
 

@@ -19,6 +19,11 @@
         <li class="navigation__item"><a href="product.php" class="navigation__link">Our product</a></li>
         <li class="navigation__item"><a href="pricing.php" class="navigation__link">Pricing</a></li>
         <li class="navigation__item"><a href="contact.php" class="navigation__link">Contact</a></li>
+        <?php if(isset($_SESSION["brukerID"])) {?>
+          <li class="navigation__item"><a href="hovedside_innlogget.php" class="navigation__link">Hjem</a></li>
+        <?php } elseif (isset($_SESSION["TeacherID"])){?>
+          <li class="navigation__item"><a href="teacherloggedin.php" class="navigation__link">Hjem</a></li>
+          <?php }?>
       </ul>
     </div>
 

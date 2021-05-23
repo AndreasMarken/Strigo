@@ -19,6 +19,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #E5E5E5;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -197,4 +201,41 @@ html {
   position: absolute;
   right: 7rem;
   bottom: -4.5rem;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .5s;
+  animation-fill-mode: backwards;
+}
+
+.btn {
+  transition: all .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6); 
+  opacity: 0;
+}
+
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-.1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }

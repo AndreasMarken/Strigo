@@ -19,6 +19,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #E5E5E5;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -144,6 +148,11 @@ html {
   border: 3px solid var(--primary-green);
   box-sizing: border-box;
   border-radius: 20px;
+  padding-left: .5rem;
+}
+
+.signup-form__input:focus, .signup-form__input:active {
+  outline: none;
 }
 
 .littlebox {

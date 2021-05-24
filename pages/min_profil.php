@@ -89,6 +89,10 @@ $epost = $rad1['email'];
     </div>
   </header>
 
+  <?php
+  require_once '../shortcuts_php/togglemenu.php';
+  ?>
+
   <section class="main">
     <div class="left-side">
     <?php if($status == 1){
@@ -197,6 +201,10 @@ $epost = $rad1['email'];
       </ul>
     </div>
   </header>
+  
+  <?php
+  require_once '../shortcuts_php/togglemenu.php';
+  ?>
 
   <section class="main">
     <div class="left-side">

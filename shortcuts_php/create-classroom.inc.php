@@ -9,6 +9,16 @@ if (isset($_POST["create_classroom"])) {
   $classname = $_POST["className"];
   $teacherId = $_SESSION["TeacherID"];
 
+  $sql1 = "SELECT COUNT(idSchoolCode) AS schoolcodeexist FROM schoolcode WHERE school_code = '$classcode';";
+  $resultat1 = $kobling->query($sql1);
+  while ($rad1 = $resultat1->fetch_assoc()) {
+    $count = $rad1[schoolcodeexist];
+  }
+  if ($count == 0) {
+    header("location: ../pages/teacherloggedin.php?error=classcode-no-exist");
+    exit();
+  } else {
+
   $sql5 = "SELECT * FROM schoolcode WHERE school_code = '$classcode';";
   $resultat4 = $kobling->query($sql5);
 
@@ -19,7 +29,7 @@ if (isset($_POST["create_classroom"])) {
       $schoolcodeID = $rad[idSchoolCode];
     }
 
-    if ($inUse == 0000000001){
+    if ($inUse == 1){
       header("location: ../pages/teacherloggedin.php?error=classcode-already-used");
       exit();
     }
@@ -49,4 +59,5 @@ if (isset($_POST["create_classroom"])) {
     exit();
   }
 
+}
 }

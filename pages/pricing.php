@@ -148,7 +148,7 @@
             <img src="../img/reekap-logo.png" alt="" class="popup__img">
         </div>
         <div class="popup__right">
-            <a href="#section-tours" class="popup__close">&times;</a>
+            <a href="pricing.php" class="popup__close">&times;</a>
             <h2 class="">Reekap</h2>
             <h3 class="">Important &ndash; This is not yet done</h3>
             <p class="popup__text">

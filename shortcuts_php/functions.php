@@ -126,26 +126,25 @@ function loginUser($kobling, $brukernavn, $pwd){
     $pwdHashed = $uidExists["passord"];
     $checkPwd = password_verify($pwd,$pwdHashed);
 
-    $pwdHashedteacher = $uidExists["password"];
-    $checkPwdteacher = password_verify($pwd,$pwdHashedteacher);
-
-  if ($checkPwd === false and $checkPwdteacher === false) {
+  if ($checkPwd === false) {
     header("location: ../pages/login.php?error=wronglogin");
     exit();
   }
   elseif ($checkPwd === true) {
-    session_start();
-    $_SESSION["brukerID"] = $uidExists["brukerID"];
-    $_SESSION["brukernavn"] = $uidExists["brukernavn"];
-    header("location: ../pages/hovedside_innlogget.php");
-    exit();
-  } elseif ($checkPwdteacher === true) {
-    session_start();
+    if ($uidExists["brukerID"]) {
+      session_start();
+      $_SESSION["brukerID"] = $uidExists["brukerID"];
+      $_SESSION["brukernavn"] = $uidExists["brukernavn"];
+      header("location: ../pages/hovedside_innlogget.php");
+      exit();
+    } elseif ($uidExists["idTeacher"]) {
+      session_start();
       $_SESSION["TeacherID"] = $uidExists["idTeacher"];
       $_SESSION["brukernavn"] = $uidExists["username"];
       header("location: ../pages/teacherloggedin.php");
-      exit();  
+      exit(); 
     }
+  } 
   }
 
 // function loginUser_teacher($kobling, $brukernavn, $pwd){

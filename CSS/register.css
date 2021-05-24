@@ -135,13 +135,13 @@ input[type="radio"]{
   border: 3px solid #455A64;
   box-sizing: border-box;
   border-radius: 0px 20px 20px 0px;
-  font-family: ABeeZee;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
   line-height: 30px;
-  color: #455A64;
+  color: #FFFFFF;
   padding: 5px 5px 5px 5px;
+  background-color: #455A64;
 }
 
 .label_student{
@@ -149,19 +149,20 @@ input[type="radio"]{
   border: 3px solid #455A64;
   box-sizing: border-box;
   border-radius: 20px 0px 0px 20px;
-  font-family: ABeeZee;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
   line-height: 30px;
-  color: #455A64;
+  color: #FFFFFF;
   padding: 5px 5px 5px 5px;
   margin-left: -50px;
+  background-color: #455A64;
 }
 
 input[type="radio"]:checked + label{
-  background-color: #455A64;
-  color: #FFFFFF
+  background-color: #E5E5E5;
+  color: #455A64;
+  text-decoration: underline;
 }
 
 .abs-right {

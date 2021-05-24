@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  $StudentTeacher = $_SESSION["StudentTeacher"];
   $navn = $_SESSION["navn"];
   $email = $_SESSION["email"];
   $brukernavn = $_SESSION["uid"];
@@ -32,9 +33,15 @@
 
       <div class="inline u-margin-bottom--small">
           <h3 class="heading-tertiary">I am a:</h3>&nbsp;
-            <input type="radio" name="StudentTeacher" value="student" id="student" checked="checked">
+            <input type="radio" name="StudentTeacher" value="student" id="student" 
+            <?php
+            if(empty($StudentTeacher)){echo"checked=\"checked\"";}elseif($StudentTeacher == 'student'){echo"checked=\"checked\"";}
+            ?>>
             <label class="label_student" for="student">Student</label>
-            <input type="radio" name="StudentTeacher" value="teacher" id="teacher">
+            <input type="radio" name="StudentTeacher" value="teacher" id="teacher"
+            <?php
+            if($StudentTeacher == 'teacher'){echo"checked=\"checked\"";}
+            ?>>
             <label class="label_teacher" for="teacher">Teacher</label>
        </div> <!-- END inline u-margin-bottom--small -->
 

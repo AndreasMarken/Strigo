@@ -3,12 +3,13 @@ session_start();
 
 if (isset($_POST["submit"])) {
 
-  $StudentTeacher = $_POST["StudentTeacher"];
+  $_SESSION["StudentTeacher"] = $_POST["StudentTeacher"];
 
   $_SESSION["navn"] = $_POST["navn"];
   $_SESSION["email"] = $_POST["email"];
   $_SESSION["uid"] = $_POST["uid"];
 
+  $StudentTeacher = $_SESSION["StudentTeacher"];
   $navn = $_SESSION["navn"];
   $email = $_SESSION["email"];
   $brukernavn = $_SESSION["uid"];

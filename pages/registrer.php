@@ -1,51 +1,91 @@
+<?php 
+  session_start();
+  $StudentTeacher = $_SESSION["StudentTeacher"];
+  $navn = $_SESSION["navn"];
+  $email = $_SESSION["email"];
+  $brukernavn = $_SESSION["uid"];
+?>
+
 <!doctype html>
 <html lang="nb">
   <head>
     <title>Strigo</title>
-
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/register.css">
-
   </head>
   <body>
 
-<?php require_once '../shortcuts_php/header.php' ; ?>
+  <header class="header">
+    <div class="navigation">
+      <ul class="navigation__list">
+        <li class="navigation__item navigation__item--reekap"><a href="../index.php"><img src="../img/reekap-logo.png" alt="Reekap"></a></li>
+      </ul>
+    </div>
+  </header>
 
-<div class="studentsignup" id="studentregister">
-
-<div class="bigContainer" id="studentregister">
-
-<div class="mainContainer">
+  <section class="signin">
+    <div class="signin__box">
+    <div class="main-content">
+  <h1 class="heading-primary u-margin-bottom--medium">Sign up</h1>
 
   <div class="signup-form">
-    <h2>Registrering</h2>
     <form action="../shortcuts_php/signup.inc.php" method="post">
-      <?php 
-      session_start();
-      $navn = $_SESSION["navn"];
-      $email = $_SESSION["email"];
-      $brukernavn = $_SESSION["uid"];
 
-      ?>
-      <h3>Hva registrerer du deg som?</h3>
-      <label for="StudentTeacher">Elev:    </label>
-      <input type="radio" name="StudentTeacher" value="student"><br>
-      <label for="StudentTeacher">Lærer:</label>
-      <input type="radio" name="StudentTeacher" value="teacher">
-      <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn" value="<?php echo"$navn";?>">
-      <h3>Email:</h3><input type="text" name="email" placeholder="Email" value="<?php echo"$email";?>">
-      <h3>Brukernavn:</h3><input type="text" name="uid" placeholder="Brukernavn" value="<?php echo"$brukernavn";?>">
-      <h3>Passord:</h3><input type="password" name="pwd" placeholder="Passord">
-      <h3>Gjenta passordet:</h3><input type="password" name="pwdrepeat" placeholder="Gjenta passord">
+      <div class="inline u-margin-bottom--small">
+          <h3 class="heading-tertiary">I am a:</h3>&nbsp;
+            <input type="radio" name="StudentTeacher" value="student" id="student" 
+            <?php
+            if(empty($StudentTeacher)){echo"checked=\"checked\"";}elseif($StudentTeacher == 'student'){echo"checked=\"checked\"";}
+            ?>>
+            <label class="label_student" for="student">Student</label>
+            <input type="radio" name="StudentTeacher" value="teacher" id="teacher"
+            <?php
+            if($StudentTeacher == 'teacher'){echo"checked=\"checked\"";}
+            ?>>
+            <label class="label_teacher" for="teacher">Teacher</label>
+       </div> <!-- END inline u-margin-bottom--small -->
 
+      <div class="inline u-margin-bottom--small">
+        <h3 class="heading-tertiary">Full name:</h3>&nbsp;
+        <div class="center_input">
+          <input class="signup-form__input" type="text" name="navn" value="<?php echo"$navn";?>">
+        </div> <!-- END center_input -->
+      </div> <!-- END inline u-margin-bottom--small -->
+
+      <div class="inline u-margin-bottom--small">
+        <h3 class="heading-tertiary">Email:</h3>&nbsp;
+        <div class="center_input">
+          <input class="signup-form__input" type="text" name="email" value="<?php echo"$email";?>">
+        </div> <!-- END center_input -->
+      </div> <!-- END inline u-margin-bottom--small -->
+
+      <div class="inline u-margin-bottom--small">
+        <h3 class="heading-tertiary">Username:</h3>&nbsp;
+        <div class="center_input">
+          <input class="signup-form__input" type="text" name="uid" value="<?php echo"$brukernavn";?>">
+        </div> <!-- END center_input -->
+      </div> <!-- END inline u-margin-bottom--small -->
+
+      <div class="inline u-margin-bottom--small">
+        <h3 class="heading-tertiary">Password:</h3>&nbsp;
+        <div class="center_input">
+          <input class="signup-form__input" type="password" name="pwd">
+        </div> <!-- END center_input -->
+      </div> <!-- END inline u-margin-bottom--small -->
+
+      <div class="inline">
+        <h3 class="heading-tertiary">Repeat password:</h3>&nbsp;
+        <div class="center_input">
+          <input class="signup-form__input" type="password" name="pwdrepeat">
+        </div> <!-- END center_input -->
+      </div> <!-- END inline -->
+     
       <div class="submit_knapp">
-
-      <button type="submit" name="submit">Registrer</button>
-
-    </div>
+      <button class="btn submit-btn" type="submit" name="submit">Sign up</button>
+      </div> <!-- END submit_knapp -->
 
     </form>
-  </div>
+  </div> <!-- END signup-form -->
 
 <div class="errormessage">
 
@@ -74,13 +114,14 @@ if (isset($_GET["error"])) {
 
 </div>
 
-</div>
+    </div> <!-- END main-content -->
+    <div> <!-- END signin__box -->
+  </section> <!-- END signin -->
 
-</div>
+<a href="login.php" class="alreadyAcc">Already have an account?</a>
 
-</div>
-
-<?php require_once '../shortcuts_php/footer.php' ; ?>
+<a href="#"><img src="../img/image 4.png" class="abs-right"></a>
+<a href="#"><img src="../img/image 3.png" class="abs-right--2"></a>
 
   </body>
 

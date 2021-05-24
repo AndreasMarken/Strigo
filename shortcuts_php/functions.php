@@ -206,7 +206,7 @@ function createUser_teacher($kobling, $brukernavn, $email, $navn, $passord) {
   $sql2 = "INSERT INTO teacher (username, email, name, password) VALUES (?, ?, ?, ?);";
   $stmt = mysqli_stmt_init($kobling);
   if (!mysqli_stmt_prepare($stmt, $sql2)) {
-    header("location: ../pages/teacherregister.php?error=stmtfailed");
+    header("location: ../pages/registrer.php?error=stmtfailed");
     exit();
   }
 

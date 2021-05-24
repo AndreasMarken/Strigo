@@ -25,8 +25,7 @@
         <div class="signin-as">
           <a href="" class="signin-as__choice current">Student</a>
           <a href="" class="signin-as__choice inactive">Teacher</a>
-        </div>
-
+        </div> <!-- END signin-as -->
         <div class="main-content">
 
           <h1 class="heading-primary u-margin-bottom--medium">Sign in</h1>
@@ -51,6 +50,7 @@
         
             </form>
           </div>
+          <!-- END signup-form -->
 
           <?php
 if (isset($_GET["error"])) {
@@ -63,9 +63,9 @@ if (isset($_GET["error"])) {
 
 }
  ?>
-        </div>
+        </div> <!-- END main-content -->
 
-      </div>
+      </div> <!-- END signin__box -->
     </section>
 
 

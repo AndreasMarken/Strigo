@@ -20,15 +20,21 @@
   <div class="signup-form">
     <h2>Registrering</h2>
     <form action="../shortcuts_php/signup.inc.php" method="post">
+      <?php 
+      session_start();
+      $navn = $_SESSION["navn"];
+      $email = $_SESSION["email"];
+      $brukernavn = $_SESSION["uid"];
 
+      ?>
       <h3>Hva registrerer du deg som?</h3>
       <label for="StudentTeacher">Elev:    </label>
       <input type="radio" name="StudentTeacher" value="student"><br>
       <label for="StudentTeacher">Lærer:</label>
       <input type="radio" name="StudentTeacher" value="teacher">
-      <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn">
-      <h3>Email:</h3><input type="text" name="email" placeholder="Email">
-      <h3>Brukernavn:</h3><input type="text" name="uid" placeholder="Brukernavn">
+      <h3>Navn:</h3><input type="text" name="navn" placeholder="Navn" value="<?php echo"$navn";?>">
+      <h3>Email:</h3><input type="text" name="email" placeholder="Email" value="<?php echo"$email";?>">
+      <h3>Brukernavn:</h3><input type="text" name="uid" placeholder="Brukernavn" value="<?php echo"$brukernavn";?>">
       <h3>Passord:</h3><input type="password" name="pwd" placeholder="Passord">
       <h3>Gjenta passordet:</h3><input type="password" name="pwdrepeat" placeholder="Gjenta passord">
 

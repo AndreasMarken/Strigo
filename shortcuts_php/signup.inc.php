@@ -1,12 +1,17 @@
 <?php
+session_start();
 
 if (isset($_POST["submit"])) {
 
   $StudentTeacher = $_POST["StudentTeacher"];
 
-  $navn = $_POST["navn"];
-  $email = $_POST["email"];
-  $brukernavn = $_POST["uid"];
+  $_SESSION["navn"] = $_POST["navn"];
+  $_SESSION["email"] = $_POST["email"];
+  $_SESSION["uid"] = $_POST["uid"];
+
+  $navn = $_SESSION["navn"];
+  $email = $_SESSION["email"];
+  $brukernavn = $_SESSION["uid"];
   $passord = $_POST["pwd"];
   $pwdrepeat = $_POST["pwdrepeat"];
 

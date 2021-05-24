@@ -111,7 +111,7 @@ if (isset($_GET["error"])) {
     <div> <!-- END signin__box -->
   </section> <!-- END signin -->
 
-<a href="404.php" class="alreadyAcc">Already have an account?</a>
+<a href="login.php" class="alreadyAcc">Already have an account?</a>
 
 <a href="#"><img src="../img/image 4.png" class="abs-right"></a>
 <a href="#"><img src="../img/image 3.png" class="abs-right--2"></a>

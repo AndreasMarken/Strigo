@@ -11,6 +11,7 @@ require_once '../shortcuts_php/kobling.php';
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/hovedside_innlogget.css">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
 </head>
 <?php  if (isset($_SESSION["brukerID"])) { 

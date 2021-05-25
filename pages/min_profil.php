@@ -78,6 +78,7 @@ $epost = $rad1['email'];
     <meta charset="utf-8">
     <title>Reekap</title>
     <link rel="stylesheet" href="../CSS/min_profil.css">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
   </head>
   <body>
 
@@ -147,6 +148,7 @@ $epost = $rad1['email'];
       <meta charset="utf-8">
       <title>Reekap</title>
       <link rel="stylesheet" href="../CSS/min_profil.css">
+      <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
       <?php 
   // Lager variabler for brukerID sitt navn, brukernavn og email//

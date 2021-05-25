@@ -9,9 +9,10 @@
 <!doctype html>
 <html lang="nb">
   <head>
-    <title>Strigo</title>
+    <title>Reekap</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/register.css">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
   </head>
   <body>
 

@@ -21,31 +21,6 @@ $id = $_GET["ID"];
      <link rel="stylesheet" href="../CSS/teacher_classroom.css">
      <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
-     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-     <script>
-        $(document).ready(function(){
-        $('.search-box input[type="text"]').on("keyup input", function(){
-            /* Get input value on change */
-            var inputVal = $(this).val();
-            var resultDropdown = $(this).siblings(".result");
-            if(inputVal.length){
-                $.get("../shortcuts_php/backend-search.php", {term: inputVal}).done(function(data){
-                    // Display the returned data in browser
-                    resultDropdown.html(data);
-                });
-            } else{
-                resultDropdown.empty();
-            }
-        });
-    
-        // Set search input value on click of result item
-        $(document).on("click", ".result p", function(){
-            $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-            $(this).parent(".result").empty();
-        });
-    });
-    </script>
-
    </head>
    <body>
    <?php  if (isset($_SESSION["TeacherID"])) { ?>
@@ -69,75 +44,24 @@ $id = $_GET["ID"];
   <nav class="navigation-left">
     <div class="navigation-left__container">
       <ul class="navigation-left__list">
-        <li class="navigation-left__item"><?php echo "<a  href='classroom.php?ID=$id' class='navigation-left__link active'>";?>Students</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='classroom.php?ID=$id' class='navigation-left__link'>";?>Students</a></li>
         <li class="navigation-left__item"><?php echo "<a  href='teacherassignments.php?ID=$id' class='navigation-left__link'>";?>Assignments</a></li>
         <li class="navigation-left__item"><?php echo "<a  href='teachercalendar.php?ID=$id' class='navigation-left__link'>";?>Calendar</a></li>
-        <li class="navigation-left__item"><?php echo "<a  href='teachersettings.php?ID=$id' class='navigation-left__link'>";?>Settings</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='teachersettings.php?ID=$id' class='navigation-left__link active'>";?>Settings</a></li>
         <li class="navigation-left__item"><a href="" class="navigation-left__link">View as student</a></li>
       </ul>
     </div>
   </nav>
-
-  <section class="right-side">
-    <h1 class="heading--primary">
-      <?php 
-        echo $classroomName;
-      ?>
-    </h1>
-    <div class="list-of-students">
-      <?php 
-        $sql_2 = "SELECT * FROM participant WHERE classroom_id = $id;";
-        $resultat_2 = $kobling->query($sql_2);
-
-          while ($rad_2 = $resultat_2->fetch_assoc()) {
-            $studentID = $rad_2["student_id"];
-
-            $sql_3 = "SELECT * FROM student WHERE brukerID = $studentID;";
-            $resultat_3 = $kobling->query($sql_3);
-          
-              while($rad_3 = $resultat_3->fetch_assoc()) {
-                $Username = $rad_3["brukernavn"];
-
-                $sql1 = "SELECT * FROM profilbilde WHERE userID = '$studentID';";
-                $result = $kobling->query($sql1);
-
-                  while ($rad = $result->fetch_assoc()) {
-                    $status = $rad['status'];
-                  }
-
-                  echo "<a href='#' class='studentItem'>";
-
-                  if($status == 1){
-                    //echo "<img src='../uploads/profile".$studentID.".".$_SESSION["fileExt"]."' width='60px'>";
-                    echo "<img src='../uploads/profile".$studentID.".jpg' width='60px' class='profilepicture'>";
-                  } else{
-                    echo "<img src='../img/profile.png' width='60px' class='profilepicture'>";
-                  }
-
-                
-
-          
-          echo "<h3 class='heading-tertiary'>".$Username."</h3>";
-          echo "</a>";
-        }
-      }
-      ?>
-    </div>
-    <a href="#popup" class="navigation-left__link active pos-right">Invite Students</a>
-  </section>
 
 </section>
 
 <div class="popup" id="popup">
     <div class="popup__content">
       <div class="add_classroom">
-        <form method="post" class="form">
-          <h2 class="heading-secondary">Search by mail or username:</h2>
-          <div class="search-box">
-            <input type="text" autocomplete="off" name="username" class="form__input">
-            <div class="result"></div>
-          </div>
-          <Button type="submit" name="join_classroom" class="btn-secondary">Invite</button>
+        <form action="" method="post" class="form">
+          <h2 class="heading-secondary">Type in your classroom-code:</h2>
+          <input type="text" name="" class="form__input">
+          <Button type="submit" name="join_classroom" class="btn-secondary">Join Classroom</button>
         </form>
         <?php 
         echo "<a href='classroom.php?ID="."$id' class='popup__close'>&times;</a>";
@@ -159,7 +83,8 @@ $id = $_GET["ID"];
 <a href="#"><img src="../img/image 3.png" alt="Instagram logo" class="abs-right--2"></a>
 <a href="#"><img src="../img/image 4.png" alt="Facebook logo" class="abs-right"></a>
 
-<?php } else {
+<?php
+} else {
 header("location:index.php");
 exit();
 }?>

@@ -2,10 +2,11 @@
 <!doctype html>
 <html lang="nb">
   <head>
-    <title>Strigo</title>
+    <title>Reekap</title>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel = "icon" href ="img/re.png" type ="image/x-icon">
 
   </head>
 
@@ -23,17 +24,17 @@
           <li class="navigation__item"><a href="pages/hovedside_innlogget.php" class="navigation__link">Hjem</a></li>
         <?php } elseif (isset($_SESSION["TeacherID"])){?>
           <li class="navigation__item"><a href="pages/teacherloggedin.php" class="navigation__link">Hjem</a></li>
-          <?php }?>
+        <?php } ?>
       </ul>
     </div>
-
+<?php if(!isset($_SESSION["brukerID"]) && !isset($_SESSION["TeacherID"])){ ?>
     <div class="login">
       <ul class="login__list">
         <li class="login__item"><a href="pages/login.php" class="login__link orange active">Sign in</a></li>
         <li class="login__item"><a href="pages/registrer.php" class="login__link">Sign up</a></li>
       </ul>
     </div>
-
+<?php } ?>
   </header>
 
   <section class="main">

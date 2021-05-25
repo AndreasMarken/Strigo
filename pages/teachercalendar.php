@@ -11,6 +11,12 @@ $id = $_GET["ID"];
             $classroomName = $rad_1[className];
             $classroomSubjectId = $rad_1[subjectId];
           }
+
+          include '../shortcuts_php/calendar.inc.php';
+          $calendar = new Calendar('2021-02-02');
+          $calendar->add_event('Birthday', '2021-02-03', 1, 'green');
+          $calendar->add_event('Doctors', '2021-02-04', 1, 'red');
+          $calendar->add_event('Holiday', '2021-02-16', 7);
  ?>
  <!doctype html>
  <html lang="nb">
@@ -18,7 +24,7 @@ $id = $_GET["ID"];
      <title>Reekap</title>
 
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../CSS/teacher_classroom.css">
+     <link rel="stylesheet" href="../CSS/teachercalendar.css">
      <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
    </head>
@@ -52,6 +58,10 @@ $id = $_GET["ID"];
       </ul>
     </div>
   </nav>
+
+  <div class="right-side">
+  <?php echo $calendar; ?>
+  </div>
 
   
 

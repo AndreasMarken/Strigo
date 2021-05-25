@@ -6,8 +6,8 @@ require_once '../shortcuts_php/kobling.php'; ?>
     <title>Reekap</title>
 
     <meta charset="UTF-8">
-    <link rel = "icon" href ="../img/strigo_logo.png" type = "image/x-icon">
     <link rel="stylesheet" href="../CSS/teacherloggedin.css">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
   </head>
 

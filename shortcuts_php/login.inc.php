@@ -1,8 +1,11 @@
 <?php
+session_start();
 
 if (isset($_POST["submit"])) {
 
-  $brukernavn = $_POST["uid"];
+  $_SESSION["uid"] = $_POST["uid"];
+
+  $brukernavn = $_SESSION["uid"];
   $pwd = $_POST["pwd"];
 
   require_once 'kobling.php';

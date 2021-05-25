@@ -1,5 +1,10 @@
 <?php require_once '../shortcuts_php/logincheck.php'; ?>
 
+<?php
+session_start();
+$brukernavn = $_SESSION["uid"];
+?>
+
 <!doctype html>
 <html lang="nb">
   <head>
@@ -34,7 +39,7 @@
             <form action="../shortcuts_php/login.inc.php" method="post" class="form">
               <div class="inline u-margin-bottom--small">
                 <h3 class="heading-tertiary">Username:</h3> &nbsp;
-                <input class="signup-form__input" type="text" name="uid">
+                <input class="signup-form__input" type="text" name="uid" value="<?php echo"$brukernavn"; ?>">
               </div>
               <div class="inline">
                 <h3 class="heading-tertiary">Password:</h3>&nbsp;

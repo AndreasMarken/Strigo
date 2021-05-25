@@ -142,9 +142,9 @@ function loginUser($kobling, $brukernavn, $pwd){
       $_SESSION["TeacherID"] = $uidExists["idTeacher"];
       $_SESSION["brukernavn"] = $uidExists["username"];
       header("location: ../pages/teacherloggedin.php");
-      exit(); 
+      exit();
     }
-  } 
+  }
   }
 
 // function loginUser_teacher($kobling, $brukernavn, $pwd){
@@ -221,7 +221,7 @@ function createUser_teacher($kobling, $brukernavn, $email, $navn, $passord) {
 }
 
 function checkKeys($kobling, $randStr) {
-  $sql = "SELECT * FROM SchoolCode";
+  $sql = "SELECT * FROM schoolcode";
   $result = $kobling->query($sql);
 
     if (!$result) {
@@ -254,7 +254,7 @@ function checkKeys($kobling, $randStr) {
 
     return $randStr;
   }
- 
+
   function emptyInputOption($StudentTeacher) {
     $resultat;
     if (empty($StudentTeacher)) {
@@ -265,7 +265,7 @@ function checkKeys($kobling, $randStr) {
        }
        return $resultat;
   }
-  
+
 
 
 

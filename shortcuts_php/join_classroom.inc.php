@@ -43,7 +43,7 @@ require_once '../shortcuts_php/kobling.php';
         $result3 = $kobling->query($sql3);
 
         $sql4 = "UPDATE classroom SET studentCount = $numberofstudents + 1 WHERE idClassroom = $classroomID;";
-        $result3 = $kobling->query($sql3);
+        $result4 = $kobling->query($sql4);
         header('location:../pages/hovedside_innlogget.php?classroom-joined');
         exit();
       } else {

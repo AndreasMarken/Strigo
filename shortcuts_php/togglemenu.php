@@ -20,7 +20,13 @@
     <aside class="nav-sidebar">
       <ul>
         <li><span>Navigasjon</span></li>
-        <li><a href="../pages/hovedside_innlogget.php">Hjemmeside</a></li>
+        <?php
+          if (isset($_SESSION["TeacherID"])) {
+            echo " <li><a href='../pages/teacherloggedin.php'>Hjemmeside</a></li>";
+          } elseif (isset($_SESSION["brukerID"])) {
+            echo "<li><a href=''../pages/hovedside_innlogget.php'>Hjemmeside</a></li>";
+          }
+        ?>
         <li><a href="../index.php">Index</a></li>
         <li><a href="../pages/min_profil.php">Profil</a></li>
         <li><a href='../shortcuts_php/logout.inc.php'>Logg ut</a></li>

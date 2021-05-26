@@ -17,18 +17,15 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
 <!doctype html>
 <html lang="nb">
   <head>
-<<<<<<< HEAD
     <title>Strigo</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/studentclassroom.css">
-=======
     <title>Reekap</title>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/studentclassroom.css">
     <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
->>>>>>> f5e493b57c839014f6aaf5a3626610e1d288215d
   </head>
 
 <body>
@@ -148,7 +145,7 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
         if (!$resultat_3) {
           die("Line 41: " . $kobling->error);
         }
-        echo"<div id=\"$row[chapterId]\" style=\"display:\" class=\"divSubChapter\"><div class=\"center2\"><ul class=\"ulSubChapter\">";
+        echo"<div id=\"$row[chapterId]\" style=\"display:none\" class=\"divSubChapter\"><div class=\"center2\"><ul class=\"ulSubChapter\">";
           while($innerrow = $resultat_3->fetch_assoc()){
             $subChapterID=$innerrow["id"];
             echo"<div class=\"center\">$innerrow[subChapter_name]<br><li class=\"liSubChapter\"><a class=\"aSubChapter\" href=\"subChapter.php?ID=$subChapterID\">Learn</a></li></div>";

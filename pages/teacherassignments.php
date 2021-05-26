@@ -10,6 +10,7 @@ $id = $_GET["ID"];
           while ($rad_1 = $resultat_1->fetch_assoc()) {
             $classroomName = $rad_1['className'];
             $classroomSubjectId = $rad_1['subjectId'];
+            $subjectId = $rad_1['subjectId'];
           }
 
         $sql_2 = "SELECT COUNT(assignmentId) AS antall_assignments FROM assignment WHERE classroomID = $id AND stauts = 1;";
@@ -102,23 +103,46 @@ $id = $_GET["ID"];
 <div class="popup" id="popup">
     <div class="popup__content">
       <div class="add_classroom">
-        <form action="" method="post" class="form">
+        <form method="post" class="form">
             <h2 class="heading-secondary">Title:</h2>
-            <input type="text" name="" class="form__input">
+            <input type="text" name="assignmentName" class="form__input">
             <h2 class="heading-secondary">Assignment:</h2>
-            <input type="text" name="" class="form__input">
+            <select name="lection">
+            <?php
+              $sql_10 = "SELECT * FROM subject 
+                         JOIN chapter ON subjectId = idSubject
+                         JOIN subChapter ON chapter_id = chapterId
+                         JOIN lection ON subChapter_id = id
+                         WHERE idSubject = $subjectId;";
+              $resultat_10 = $kobling->query($sql_10);
+            ?>
+            <?php  while ($rad = $resultat_10->fetch_assoc()) { ?>
+              <option><?php echo $rad["name"]; ?></option>
+            <?php } ?>
+            </select>
             <h2 class="heading-secondary">Due date:</h2>
-            <input type="date" name="" class="form__input">
-            <Button type="submit" name="join_classroom" class="btn-secondary">Delete</button>
-            <Button type="submit" name="join_classroom" class="btn-secondary">Save</button>
+            <input type="date" name="date" class="form__input">
+            <Button type="submit" name="delete" class="btn-secondary">Delete</button>
+            <Button type="submit" name="save" class="btn-secondary">Save</button>
         </form>
         <?php 
-        echo "<a href='classroom.php?ID="."$id' class='popup__close'>&times;</a>";
+        echo "<a href='teacherassignments.php?ID="."$id' class='popup__close'>&times;</a>";
         ?>
-        
       </div>
     </div>
   </div>
+
+  <?php 
+    if ($_POST["save"]) {
+      $lection = $_POST["lection"];
+      $name = $_POST["assignmentName"];
+      $date = $_POST["date"];
+
+      
+    }
+  
+  ?>
+
 
 
   <svg class="btmleft" width="538" height="364" viewBox="0 0 538 364" xmlns="http://www.w3.org/2000/svg">

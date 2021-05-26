@@ -146,14 +146,14 @@
 <div class="popup" id="popup">
     <div class="popup__content">
         <div class="popup__left">
-            <img src="../img/reekap-logo.png" alt="" class="popup__img">
+            <img src="../img/videoclass.jpg" alt="" class="popup__img">
         </div>
         <div class="popup__right">
             <a href="pricing.php" class="popup__close">&times;</a>
-            <h2 class="">Reekap</h2>
-            <h3 class="">Important &ndash; This is not yet done</h3>
+            <h2 class="heading-secondary">Reekap</h2>
+            <h3 class="heading-tertiary">Important &ndash; This is not yet done</h3>
             <p class="popup__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis facere consectetur dignissimos, adipisci cupiditate quas dolorum temporibus quibusdam veritatis nihil, facilis doloribus ipsa unde quis assumenda rerum eius blanditiis amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aspernatur neque natus amet velit sunt sed eos recusandae. Debitis dignissimos culpa ducimus nihil neque quia laborum, commodi aut optio cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae minus ad quisquam quibusdam corrupti quae atque, facilis dolor nemo! Repudiandae modi reiciendis, placeat repellat perferendis voluptatibus ab ea facere necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias labore illum autem sequi. Error nesciunt incidunt reprehenderit culpa earum, velit nulla illum quibusdam non placeat, minima, deserunt ab est odit.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis facere consectetur dignissimos, adipisci cupiditate quas dolorum temporibus quibusdam veritatis nihil, facilis doloribus ipsa unde quis assumenda rerum eius blanditiis amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aspernatur neque natus amet velit sunt sed eos recusandae. Debitis dignissimos culpa ducimus nihil neque quia laborum, commodi aut optio cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae minus ad quisquam quibusdam corrupti quae atque, facilis dolor nemo! Repudiandae modi reiciendis, placeat repellat perferendis voluptatibus ab ea facere necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias labore illum autem sequi.
             </p>
             <a href="#" class="btn-main">Order now</a>
         </div>

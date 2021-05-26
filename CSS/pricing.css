@@ -417,12 +417,12 @@
 }
 
 .popup__left {
-  width: 33.333333%;
+  width: 40%;
   display: table-cell; 
 }
 
 .popup__right {
-  width: 66.6666667%;
+  width: 60%;
   display: table-cell;
   vertical-align: middle;
   padding: 3rem 5rem; 
@@ -471,4 +471,14 @@
 
 .popup__close:hover {
   color: var(--primary-green); 
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  color: var(--primary-text);
+}
+
+.heading-tertiary {
+  font-size: 2rem;
+  color: var(--primary-text);
 }

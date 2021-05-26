@@ -24,7 +24,7 @@
           if (isset($_SESSION["TeacherID"])) {
             echo " <li><a href='../pages/teacherloggedin.php'>Hjemmeside</a></li>";
           } elseif (isset($_SESSION["brukerID"])) {
-            echo "<li><a href=''../pages/hovedside_innlogget.php'>Hjemmeside</a></li>";
+            echo "<li><a href='../pages/hovedside_innlogget.php'>Hjemmeside</a></li>";
           }
         ?>
         <li><a href="../index.php">Index</a></li>

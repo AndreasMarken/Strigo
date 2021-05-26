@@ -1,0 +1,257 @@
+:root {
+    --background-color: #FFFFFF;
+    --primary-orange:#F5B78A;
+    --primary-green: #455A64;
+  
+    --primary-text: #263238;
+    --light-orange-text: #EBAE3D;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: #E5E5E5;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    
+    height: 10rem;
+    width: 100%;
+  }
+  
+  .navigation__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .navigation__item {
+    padding: 2rem;
+    margin-right: 3rem;
+  
+    text-decoration: none;
+    list-style: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+  }
+  
+  .navigation__link,
+  .navigation__link:link,
+  .navigation__link:visited {
+    text-decoration: none;
+  
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--primary-text);
+  }
+  
+
+  
+  .abs-right {
+    position: fixed;
+    right: 1rem;
+    bottom: 0;
+  }
+  
+  .abs-right--2 {
+    position: fixed;
+    right: 7rem;
+    bottom: .7rem;
+  }
+
+  .main {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5rem;
+  }
+
+  .videobox {
+    width: 85rem;
+    height: 54rem;
+    border: 4px solid var(--primary-green);
+    border-radius: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .videobox iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 2rem;
+  }
+
+  .notebox {
+    flex: 1;
+    border: 4px solid var(--primary-green);
+    border-radius: 2rem;
+    margin-right: 5rem;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .heading-primary {
+    font-size: 3.8rem;
+    line-height: 4rem;
+    font-weight: 400;
+    border-bottom: 2px solid var(--primary-green);
+    width: 20rem;
+    margin-top: 2rem;
+  }
+
+  .navigation-2 {
+    margin-left: 13rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .navigation__list-2 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navigation__item-2 {
+    list-style: none;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    background-color: var(--primary-green);
+    margin-right: 2px;
+    padding: 1rem;
+    width: 12rem;
+    text-align: center;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  .active {
+    background-color: var(--primary-orange);
+    color: var(--primary-green);
+  }
+
+  .left {
+    border-radius: 20px 0px 0px 20px;
+  }
+
+  .right {
+    border-radius: 0px 20px 20px 0px;
+  }
+
+  .topright {
+      width: 23rem;
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      z-index: -10;
+  }
+
+  .midleft {
+    width: 8.5rem;
+    position: fixed;
+    top: -10rem;
+    left: 0;
+
+    z-index: -10;
+  }
+
+  .main-2 {
+    width: 80%;
+    margin: 2.5rem auto ;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .big-notebox {
+    flex: 1;
+    border: 4px solid var(--primary-green);
+    border-radius: 2rem;
+    height: 90%;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .btn-tertiary {
+    border: none;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--primary-green);
+    margin-top: 1rem;
+    margin-left: auto;
+    width: 18rem;
+  }
+
+  .main-4 {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .videobox-1 {
+    width: 62rem;
+    height: 35rem;
+    border-radius: 2rem;
+    border: 4px solid var(--primary-green);
+    margin-left: 10rem;
+    margin-right: 5rem;
+  }
+
+  .videobox-2 {
+    width: 40rem;
+    height: 22rem;
+    border-radius: 2rem;
+    border: 4px solid var(--primary-green);
+    align-self: flex-end;
+  }
+
+  .videobox-1 iframe, .videobox-2 iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+  }
+
+  .heading-secondary {
+    font-size: 4rem;
+    line-height: 5.5rem;
+    color: var(--primary-text);
+  }
+
+  .textbox-1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+    margin-right: 10rem;
+  }
+
+  .paragraph-main {
+    margin: 2rem 1rem;
+    font-size: 1.6rem;
+  }

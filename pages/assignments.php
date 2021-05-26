@@ -13,6 +13,13 @@ if (isset($_SESSION["brukerID"])) {
       $classroomSubjectId = $rad_1["subjectId"];
     }
 
+    $sql_2 = "SELECT COUNT(assignmentId) AS antall_assignments FROM assignment WHERE classroomID = $id AND stauts = 1;";
+        $resultat_2 = $kobling->query($sql_2);
+
+          while ($rad_2 = $resultat_2->fetch_assoc()) {
+              $antall_lekser = $rad_2['antall_assignments'];
+          } 
+
 ?>
 
 <!doctype html>

@@ -21,30 +21,30 @@ $id = $_GET["ID"];
      <link rel="stylesheet" href="../CSS/teacher_classroom.css">
      <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
-     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-     <script>
-        $(document).ready(function(){
-        $('.search-box input[type="text"]').on("keyup input", function(){
-            /* Get input value on change */
-            var inputVal = $(this).val();
-            var resultDropdown = $(this).siblings(".result");
-            if(inputVal.length){
-                $.get("../shortcuts_php/backend-search.php", {term: inputVal}).done(function(data){
-                    // Display the returned data in browser
-                    resultDropdown.html(data);
-                });
-            } else{
-                resultDropdown.empty();
-            }
-        });
-    
-        // Set search input value on click of result item
-        $(document).on("click", ".result p", function(){
-            $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
-            $(this).parent(".result").empty();
-        });
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $('.search-box input[type="text"]').on("keyup input", function(){
+        /* Get input value on change */
+        var inputVal = $(this).val();
+        var resultDropdown = $(this).siblings(".result");
+        if(inputVal.length){
+            $.get("../shortcuts_php/backend-search.php", {term: inputVal}).done(function(data){
+                // Display the returned data in browser
+                resultDropdown.html(data);
+            });
+        } else{
+            resultDropdown.empty();
+        }
     });
-    </script>
+    
+    // Set search input value on click of result item
+    $(document).on("click", ".result p", function(){
+        $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        $(this).parent(".result").empty();
+    });
+});
+</script>
 
    </head>
    <body>
@@ -134,7 +134,7 @@ $id = $_GET["ID"];
         <form method="post" class="form">
           <h2 class="heading-secondary">Search by mail or username:</h2>
           <div class="search-box">
-            <input type="text" autocomplete="off" name="username" class="form__input">
+            <input type="text" autocomplete="off" class="form__input">
             <div class="result"></div>
           </div>
           <Button type="submit" name="join_classroom" class="btn-secondary">Invite</button>
@@ -142,7 +142,6 @@ $id = $_GET["ID"];
         <?php 
         echo "<a href='classroom.php?ID="."$id' class='popup__close'>&times;</a>";
         ?>
-        <!-- <a href="classroom.php? class="popup__close">&times;</a> -->
       </div>
     </div>
   </div>

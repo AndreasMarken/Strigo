@@ -3,7 +3,7 @@ require_once '../shortcuts_php/kobling.php';
 
 if(isset($_REQUEST["term"])){
     // Prepare a select statement
-    $sql = "SELECT * FROM student WHERE brukernavn LIKE ? LIMIT 10";
+    $sql = "SELECT * FROM student WHERE brukernavn LIKE ? LIMIT 10;";
     
     if($stmt = mysqli_prepare($kobling, $sql)){
         // Bind variables to the prepared statement as parameters

@@ -8,8 +8,8 @@ $id = $_GET["ID"];
         $resultat_1 = $kobling->query($sql_1);
 
           while ($rad_1 = $resultat_1->fetch_assoc()) {
-            $classroomName = $rad_1[className];
-            $classroomSubjectId = $rad_1[subjectId];
+            $classroomName = $rad_1["className"];
+            $classroomSubjectId = $rad_1["subjectId"];
           }
  ?>
  <!doctype html>

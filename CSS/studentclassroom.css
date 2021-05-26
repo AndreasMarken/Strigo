@@ -1,103 +1,181 @@
-a:visited,
-a:link {
-  text-decoration: none;
+:root {
+  --background-color: #FFFFFF;
+  --primary-orange:#F5B78A;
+  --primary-green: #455A64;
+
+  --primary-text: #263238;
+  --light-orange-text: #EBAE3D;
 }
 
-.heading-tertiary {
-  font-size: 30px;
-  color: white;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.oversiktsmeny {
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
+.header {
   display: flex;
   flex-direction: row;
-  background-color: #3F7075;
-  justify-content: space-around;
+  
+  height: 10rem;
+  width: 100%;
+}
+
+.navigation__list {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  width: 790px;
-  margin: 0 auto;
-  margin-top: 20px;
+  height: 100%;
+}
+
+.navigation__item {
+  padding: 2rem;
+  margin-right: 3rem;
+
+  text-decoration: none;
+  list-style: none;
+
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+.navigation__link,
+.navigation__link:link,
+.navigation__link:visited {
+  text-decoration: none;
+
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: var(--primary-text);
+}
+
+.navigation-left {
+  margin-top: 7rem;
+  display: flex;
+  flex: 0;
+}
+
+.navigation-left__container {
+  width: 35rem;
+}
+
+.navigation-left__list {
+  list-style: none;
+  margin-left: 4rem;
+}
+
+.navigation-left__link {
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 3.2rem;    
+  line-height: 3.8rem;
+  width: 23rem;
+  height: 6rem;
+  border-radius: 2rem;
+  background-color: #263238;
+  margin-bottom: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.active {
+  background-color: var(--primary-orange) !important;
+  color: #2E353A !important;
+}
+
+.main {
+  display: flex;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  
+}
+
+.heading--primary {
+  font-size: 5.5rem;
+  line-height: 3.8rem;
+  font-weight: 400;
+  color: #2E353A;
+  width: 100%;
+}
+ .liChapter{
+  padding: 2rem;
+  margin-right: 3rem;
+  list-style: none;
+  line-height: 1.5rem;
+  width: 50rem;
+  background-color: #FFFFFF;
+  border-radius: 2rem;
+  margin-top: 3rem;
+ }
+
+ .aChapter{
+   text-decoration: none;
+   color: #000000;
+   width: 100px;
+   font-size: 32px;
+   font-style: normal;
+   font-weight: normal; 
   }
 
+  .svg1{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .svg2{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
-.minprofil {
+  /* .aChapter:hover{
+    color: red;
+  } */
+
+  .divSubChapter{
+    width: 60%;
+    display: flex;
+  }
+.center{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: -10px;
-}
-
-.minprofil img{
   border: solid 1px black;
-  border-radius: 30px;
-  height: 60px;
+
 }
 
-.fullførtkapitler {
+
+
+.liSubChapter{
+ color: #FFFFFF;
+  text-align: center;
+  font-size: 3.2rem;    
+  line-height: 3.8rem;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
   display: flex;
-  flex-direction: row;
-  margin: 10px;
-  border-left: 1px solid white;
-  padding-left: 70px;
-  margin-left: -39px;
-}
-
-.fullførtoppgaver {
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
-  border-left: 1px solid white;
-  padding-left: 50px;
-  margin-left: -39px;
-}
-
-h3{
-  color: white;
-}
-
-.minprofil a {
-  text-decoration: none;
-}
-
-.minprofil h3{
-  margin-top: 5px;
-}
-
-.små_bokser {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.små_bokser a {
-  text-decoration: none;
-  color: white;
-}
-
-.øverste_rad {
-  display: flex;
-  flex-direction: row;
-}
-
-
-.andre_rad {
-  display: flex;
-  flex-direction: row;
-}
-
-.liten_boks_medtekst {
-  display: flex;
-  flex-direction: column;
-  background-color: #69b9c2;
-  margin: 10px;
-  width: 250px;
   justify-content: center;
   align-items: center;
-}
-
-.liten_boks_medtekst img {
-  margin-top: 5px;
+  outline: none;
 }

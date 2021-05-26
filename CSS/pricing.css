@@ -371,14 +371,14 @@
 }
 
 .btm-left {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: -30%;
     z-index: -1;
 }
 
 .mid-right {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 50%;
     z-index: -1;

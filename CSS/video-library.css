@@ -121,3 +121,56 @@
   right: 7rem;
   bottom: .7rem;
 }
+
+.main {
+  display: flex;
+}
+
+.divContainerRight{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 7rem;
+  flex-wrap: wrap;
+  margin-top: 10rem;
+}
+
+.divChapters{
+  width: 33%;
+  width: 17rem;
+  border-radius: 2rem;
+  background-color: #455A64;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 1.5rem;
+  height: 20rem;
+}
+
+.divChapters h5{
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  text-decoration: underline;
+}
+.divChapters a{
+  font-size: 2rem;
+  background-color: #FFFFFF;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2rem;
+  color: #000000;
+  text-decoration: none;
+  margin-top: 10rem;
+}
+
+.divChapters a:hover{
+  background-color:var(--primary-orange);
+}
+
+.divChapters .YouTube{
+  font-size: 1.5rem;
+  background-color: #FFFFFF;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2rem;
+  color: #000000;
+  text-decoration: none;
+}

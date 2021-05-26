@@ -3,7 +3,16 @@
   require_once '../shortcuts_php/logincheck.php';
   require_once '../shortcuts_php/kobling.php';
   if (isset($_SESSION["brukerID"])) { 
+    $id = $_GET["ID"];
 
+    $sql="SELECT lection.lection_id, lection.name, lection.video_url, subchapter.id
+      FROM classroom
+      JOIN subject ON subject.idsubject = classroom.subjectId
+      JOIN chapter ON subject.idSubject = chapter.subjectId
+      JOIN subchapter ON subchapter.chapter_id = chapter.chapterId
+      JOIN lection ON subchapter.id = lection.subChapter_id
+      WHERE classroom.idClassroom = $id";
+    $res=$kobling->query($sql);
 ?>
 
 <!doctype html>
@@ -39,6 +48,20 @@
       </ul>
     </div>
   </nav>
+
+
+  <div class="divContainerRight">
+    <?php 
+    while($row = $res->fetch_assoc()){
+        $id = $row["id"];
+        echo"<div class=\"divChapters\">";
+        echo"<h5>$row[name]</h5>";
+        echo"<a class=\"YouTube\"href=\"$row[video_url]\" target=\_blank\>Video i YouTube</a><br><br><br><br><br>";// Om noen legger merke til de <br>-ene her. Fyyyy søren, nå har jeg prøvd å ordne det i css og jeg GIDDER ikke mer. Men uansett; du er fantastisk og ha en utrolig bra dag!
+        echo"<a href=\"subChapter.php?ID=$id\">Learn</a>";
+        echo"</div>";
+    }
+    ?>
+   </div> <!-- END divContainerRight -->
 
 
 <svg class="svg1" width="658" height="836" viewBox="0 0 658 836" xmlns="http://www.w3.org/2000/svg">

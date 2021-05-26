@@ -156,7 +156,6 @@ body {
 }
 
 .center{
-  display: flex;
   width: 10%;
   float: left;
   height: 14rem;
@@ -164,7 +163,13 @@ body {
   margin: 1rem;
   border-radius: 2rem;
   background-color: #FFFFFF;
-  justify-content: center;
+  text-align: center;
+}
+
+.center h3{
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  padding: 1.4rem;
 }
 
 .abs-right {
@@ -177,4 +182,21 @@ body {
   position: fixed;
   right: 7rem;
   bottom: .7rem;
+}
+
+.aSubChapter{
+  font-size: 2rem;
+  background-color: #455A64;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 2rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.aSubChapter:hover{
+  background-color: var(--primary-orange);
+}
+
+.liChapter:hover{
+  background-color: #f0f0f0;
 }

@@ -2,11 +2,12 @@
 <!doctype html>
 <html lang="nb">
   <head>
-    <title>Strigo</title>
+    <title>Reekap</title>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/product.css">
-
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
+    
   </head>
 
   <body>
@@ -51,8 +52,8 @@
   </section>
 
   <div class="buttons u-margin-top--big">
-      <a href="" class="btn btn--secondary">Reekap insight</a>
-      <a href="" class="btn btn-main">Start learning</a>
+      <a href="#popup" class="btn btn--secondary">Reekap insight</a>
+      <a href="login.php" class="btn btn-main">Start learning</a>
   </div>
 
     <svg class="btm-left" width="529" height="283" viewBox="0 0 529 283" xmlns="http://www.w3.org/2000/svg">
@@ -61,5 +62,23 @@
 
     <a href="#"><img src="../img/image 3.png" class="abs-right--2"></a>
     <a href="#"><img src="../img/image 4.png" class="abs-right"></a>
+
+
+  <div class="popup" id="popup">
+    <div class="popup__content">
+        <div class="popup__left">
+            <img src="../img/reekap-logo.png" alt="" class="popup__img">
+        </div>
+        <div class="popup__right">
+            <a href="product.php" class="popup__close">&times;</a>
+            <h2 class="">Reekap</h2>
+            <h3 class="">Important &ndash; This is not yet done</h3>
+            <p class="popup__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis facere consectetur dignissimos, adipisci cupiditate quas dolorum temporibus quibusdam veritatis nihil, facilis doloribus ipsa unde quis assumenda rerum eius blanditiis amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aspernatur neque natus amet velit sunt sed eos recusandae. Debitis dignissimos culpa ducimus nihil neque quia laborum, commodi aut optio cum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae minus ad quisquam quibusdam corrupti quae atque, facilis dolor nemo! Repudiandae modi reiciendis, placeat repellat perferendis voluptatibus ab ea facere necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias labore illum autem sequi. Error nesciunt incidunt reprehenderit culpa earum, velit nulla illum quibusdam non placeat, minima, deserunt ab est odit.
+            </p>
+            <a href="#" class="btn-main">Order now</a>
+        </div>
+    </div>
+ </div>
   </body>
 </html>

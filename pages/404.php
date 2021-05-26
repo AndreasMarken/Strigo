@@ -7,6 +7,7 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
 
     <style>
       body {

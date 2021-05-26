@@ -2,10 +2,11 @@
 <!doctype html>
 <html lang="nb">
   <head>
-    <title>Strigo</title>
+    <title>Reekap</title>
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel = "icon" href ="img/re.png" type ="image/x-icon">
 
   </head>
 
@@ -46,7 +47,7 @@
         <h1 class="heading-primary">Learn <span class="heading-primary orange">smarter</span> with <br>Reekap!</h1> <br>
         <p class="paragraph-main u-margin-top">We make learning faster,<br> easier and funnier for you!</p> <br>
       
-        <a href="#" class="btn-main btn--animated btn">Start learing!</a>
+        <a href="pages/login.php" class="btn-main btn--animated btn">Start learing!</a>
       </div>
     </div>
 

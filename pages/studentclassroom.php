@@ -17,9 +17,18 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
 <!doctype html>
 <html lang="nb">
   <head>
+<<<<<<< HEAD
     <title>Strigo</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/studentclassroom.css">
+=======
+    <title>Reekap</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS/studentclassroom.css">
+    <link rel = "icon" href ="../img/re.png" type ="image/x-icon">
+
+>>>>>>> f5e493b57c839014f6aaf5a3626610e1d288215d
   </head>
 
 <body>

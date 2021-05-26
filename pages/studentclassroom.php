@@ -60,10 +60,10 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
     <div class="navigation-left__container">
       <ul class="navigation-left__list">
         <li class="navigation-left__item"><?php echo "<a  href='studentclassroom.php?ID=$id' class='navigation-left__link active'>";?>Lessons</a></li>
-        <li class="navigation-left__item"><?php echo "<a  href='#.php?ID=$id' class='navigation-left__link'>";?>Practice</a></li>
-        <li class="navigation-left__item"><?php echo "<a  href='#.php?ID=$id' class='navigation-left__link'>";?>Video-library</a></li>
-        <li class="navigation-left__item"><?php echo "<a  href='#.php?ID=$id' class='navigation-left__link'>";?>Your notes</a></li>
-        <li class="navigation-left__item"><a href="#" class="navigation-left__link">Assignments</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='practice.php?ID=$id' class='navigation-left__link'>";?>Practice</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='video-library.php?ID=$id' class='navigation-left__link'>";?>Video-library</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='notes.php?ID=$id' class='navigation-left__link'>";?>Your notes</a></li>
+        <li class="navigation-left__item"><?php echo "<a  href='assignments.php?ID=$id' class='navigation-left__link'>";?>Assignments</a></li>
       </ul>
     </div>
   </nav>
@@ -148,7 +148,10 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
         echo"<div id=\"$row[chapterId]\" style=\"display:none\" class=\"divSubChapter\"><div class=\"center2\"><ul class=\"ulSubChapter\">";
           while($innerrow = $resultat_3->fetch_assoc()){
             $subChapterID=$innerrow["id"];
-            echo"<div class=\"center\">$innerrow[subChapter_name]<br><li class=\"liSubChapter\"><a class=\"aSubChapter\" href=\"subChapter.php?ID=$subChapterID\">Learn</a></li></div>";
+            echo"<div class=\"center\">";
+            echo"<h3>$innerrow[subChapter_name]</h3>";
+            echo"<a class=\"aSubChapter\" href=\"subChapter.php?ID=$subChapterID\">Learn</a>";
+            echo"</div>";
           }
         echo"</ul></div></div>";
     }
@@ -248,6 +251,10 @@ while ($rad_1 = $resultat_1->fetch_assoc()) {
 //   echo "Faget ditt finnes ikke for nettsiden enda";
 // }
 ?>
+
+<a href="#"><img src="../img/image 3.png" alt="Instagram logo" class="abs-right--2"></a>
+<a href="#"><img src="../img/image 4.png" alt="Facebook logo" class="abs-right"></a>
+
 <svg class="svg1" width="658" height="836" viewBox="0 0 658 836" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M287.003 663.462C224.12 628.087 280.624 523.202 267.104 452.329C258.763 408.608 233.016 372.504 223.215 329.087C209.541 268.505 158.487 195.761 198.461 148.23C239.277 99.6969 323.937 155.983 384.53 137.275C439.975 120.158 473.699 27.9612 528.768 46.2527C586.353 65.3799 553.355 171.901 601.186 209.238C661.62 256.413 771.993 210.206 817.675 271.776C859.021 327.502 828.938 412.579 798.217 474.797C768.78 534.417 716.658 586.595 652.906 605.484C594.213 622.874 536.952 560.54 476.491 570.12C405.511 581.367 349.639 698.697 287.003 663.462Z" fill="#F5B78A"/>
 </svg>

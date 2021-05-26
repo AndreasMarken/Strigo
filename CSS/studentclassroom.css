@@ -105,7 +105,6 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  
 }
 
 .heading--primary {
@@ -115,7 +114,8 @@ body {
   color: #2E353A;
   width: 100%;
 }
- .liChapter{
+
+.liChapter{
   padding: 2rem;
   margin-right: 3rem;
   list-style: none;
@@ -126,56 +126,55 @@ body {
   margin-top: 3rem;
  }
 
- .aChapter{
-   text-decoration: none;
-   color: #000000;
-   width: 100px;
-   font-size: 32px;
-   font-style: normal;
-   font-weight: normal; 
-  }
-
-  .svg1{
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-  .svg2{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  /* .aChapter:hover{
-    color: red;
-  } */
-
-  .divSubChapter{
-    width: 60%;
-    display: flex;
-  }
-.center{
-  display: flex;
-  border: solid 1px black;
-
+.aChapter{
+  text-decoration: none;
+  color: #000000;
+  width: 100px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal; 
 }
 
+.svg1{
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
 
+.svg2{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
-.liSubChapter{
- color: #FFFFFF;
-  text-align: center;
-  font-size: 3.2rem;    
-  line-height: 3.8rem;
-  width: 13rem;
-  height: 13rem;
-  border-radius: 2rem;
-  margin-bottom: 3rem;
-  text-align: center;
+.divSubChapter{
+  width: 60%;
   display: flex;
+  height: 16rem;
+}
+
+.center{
+  display: flex;
+  width: 10%;
+  float: left;
+  height: 14rem;
+  width: 14rem;
+  margin: 1rem;
+  border-radius: 2rem;
+  background-color: #FFFFFF;
   justify-content: center;
-  align-items: center;
-  outline: none;
+}
+
+.abs-right {
+  position: fixed;
+  right: 1rem;
+  bottom: 0;
+}
+
+.abs-right--2 {
+  position: fixed;
+  right: 7rem;
+  bottom: .7rem;
 }

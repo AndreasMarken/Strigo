@@ -52,17 +52,14 @@ function uidExist($kobling, $brukernavn, $email) {
     exit();
   }
 
- mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
- mysqli_stmt_execute($stmt);
+  mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
+  mysqli_stmt_execute($stmt);
 
- $resultData = mysqli_stmt_get_result($stmt);
+  $resultData = mysqli_stmt_get_result($stmt);
 
-if ($row = mysqli_fetch_assoc($resultData)) {
-  return $row;
-}
-else {
-  // $result = false;
-  // return $result;
+  if ($row = mysqli_fetch_assoc($resultData)) {
+    return $row;
+  } else {
   $sql = "SELECT * FROM teacher WHERE username = ? OR email = ?;";
   $stmt = mysqli_stmt_init($kobling);
   if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -70,24 +67,22 @@ else {
     exit();
   }
 
- mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
- mysqli_stmt_execute($stmt);
+  mysqli_stmt_bind_param($stmt, "ss", $brukernavn, $email);
+  mysqli_stmt_execute($stmt);
 
- $resultData2 = mysqli_stmt_get_result($stmt);
+  $resultData2 = mysqli_stmt_get_result($stmt);
 
-if ($row2 = mysqli_fetch_assoc($resultData2)) {
-  return $row2;
-}
-else {
-  $result = false;
-  return $result;
-}
+  if ($row2 = mysqli_fetch_assoc($resultData2)) {
+    return $row2;
+  } else {
+      $result = false;
+      return $result;
+    }
+
+  mysqli_stmt_close($stmt);
+  }
 
 mysqli_stmt_close($stmt);
-}
-
-mysqli_stmt_close($stmt);
-
 }
 
 // function uidExist_teacher($kobling, $brukernavn, $email) {
@@ -123,28 +118,27 @@ function loginUser($kobling, $brukernavn, $pwd){
     exit();
   }
 
-    $pwdHashed = $uidExists["passord"];
-    $checkPwd = password_verify($pwd,$pwdHashed);
+  $pwdHashed = $uidExists["passord"];
+  $checkPwd = password_verify($pwd,$pwdHashed);
 
   if ($checkPwd === false) {
     header("location: ../pages/login.php?error=wronglogin");
     exit();
-  }
-  elseif ($checkPwd === true) {
-    if ($uidExists["brukerID"]) {
-      session_start();
-      $_SESSION["brukerID"] = $uidExists["brukerID"];
-      $_SESSION["brukernavn"] = $uidExists["brukernavn"];
-      header("location: ../pages/hovedside_innlogget.php");
-      exit();
-    } elseif ($uidExists["idTeacher"]) {
-      session_start();
-      $_SESSION["TeacherID"] = $uidExists["idTeacher"];
-      $_SESSION["brukernavn"] = $uidExists["username"];
-      header("location: ../pages/teacherloggedin.php");
-      exit();
+  } elseif ($checkPwd === true) {
+      if ($uidExists["brukerID"]) {
+        session_start();
+        $_SESSION["brukerID"] = $uidExists["brukerID"];
+        $_SESSION["brukernavn"] = $uidExists["brukernavn"];
+        header("location: ../pages/hovedside_innlogget.php");
+        exit();
+      } elseif ($uidExists["idTeacher"]) {
+          session_start();
+          $_SESSION["TeacherID"] = $uidExists["idTeacher"];
+          $_SESSION["brukernavn"] = $uidExists["username"];
+          header("location: ../pages/teacherloggedin.php");
+          exit();
+      }
     }
-  }
   }
 
 // function loginUser_teacher($kobling, $brukernavn, $pwd){
@@ -181,13 +175,13 @@ function createUser($kobling, $navn, $email, $brukernavn, $passord) {
 
   $hashedPwd = password_hash($passord, PASSWORD_DEFAULT);
 
- mysqli_stmt_bind_param($stmt, "ssss", $navn, $email, $brukernavn, $hashedPwd);
- mysqli_stmt_execute($stmt);
- mysqli_stmt_close($stmt);
- $sql3 = "INSERT INTO profilbilde (userID, status) VALUES (LAST_INSERT_ID(),0);";
- $resultat = $kobling->query($sql3);
- loginUser($kobling, $brukernavn, $passord);
- exit();
+  mysqli_stmt_bind_param($stmt, "ssss", $navn, $email, $brukernavn, $hashedPwd);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_close($stmt);
+  $sql3 = "INSERT INTO profilbilde (userID, status) VALUES (LAST_INSERT_ID(),0);";
+  $resultat = $kobling->query($sql3);
+  loginUser($kobling, $brukernavn, $passord);
+  exit();
 }
 
 function emptyInputLogin($brukernavn, $pwd) {
